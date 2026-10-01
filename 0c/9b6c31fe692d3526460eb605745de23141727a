@@ -1,0 +1,29 @@
+miniprogram/pages/services/services.wxss
+  s_536f5cc99fcfc2::t_7ff0939f8a9e7d 88,91-103,106
+docs/superpowers/plans/2026-10-01-accessibility-mini-program.md
+  s_536f5cc99fcfc2::t_7ff0939f8a9e7d 184,260,300
+miniprogram/pages/services/services.wxml
+  s_536f5cc99fcfc2::t_7ff0939f8a9e7d 38-46,51
+docs/superpowers/specs/2026-10-01-accessibility-mini-program-design.md
+  s_536f5cc99fcfc2::t_7ff0939f8a9e7d 30,51,92
+miniprogram/pages/profile/profile.wxss
+  s_536f5cc99fcfc2::t_7ff0939f8a9e7d 56-64,73,75-78,81
+miniprogram/pages/profile/profile.wxml
+  s_536f5cc99fcfc2::t_7ff0939f8a9e7d 22-30,34,46-54,58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "0c9b6c31fe692d3526460eb605745de23141727a",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
