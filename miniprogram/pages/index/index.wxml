@@ -52,8 +52,11 @@
       <text class="text-section-title" aria-role="header">推荐服务</text>
       <button class="text-link text-body" bindtap="onAllServicesTap">查看全部</button>
     </view>
-    <block wx:for="{{featuredServices}}" wx:key="id" wx:for-item="service">
+    <view class="featured-grid">
       <button
+        wx:for="{{featuredServices}}"
+        wx:for-item="service"
+        wx:key="id"
         class="service-card surface-card"
         data-service-id="{{service.id}}"
         bindtap="onOpenService"
@@ -62,7 +65,7 @@
         <text class="service-name text-body">{{service.name}}</text>
         <text class="service-summary text-caption text-muted">{{service.summary}}</text>
       </button>
-    </block>
+    </view>
 
     <view class="notice-wrap">
       <button class="button-secondary notice-button" bindtap="onNoticeTap">
