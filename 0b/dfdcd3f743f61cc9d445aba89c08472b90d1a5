@@ -1,0 +1,25 @@
+miniprogram/pages/index/index.wxml
+  s_536f5cc99fcfc2::t_20909d86622c32 55,57-59,68
+docs/superpowers/plans/2026-10-01-accessibility-mini-program.md
+  s_536f5cc99fcfc2::t_20909d86622c32 143,300
+miniprogram/pages/index/index.wxss
+  s_536f5cc99fcfc2::t_20909d86622c32 215,218-230,233
+docs/superpowers/specs/2026-10-01-accessibility-mini-program-design.md
+  s_536f5cc99fcfc2::t_20909d86622c32 92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "0bdfdcd3f743f61cc9d445aba89c08472b90d1a5",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
