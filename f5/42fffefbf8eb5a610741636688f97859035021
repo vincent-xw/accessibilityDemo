@@ -1,0 +1,35 @@
+miniprogram/pages/index/index.wxml
+  s_536f5cc99fcfc2::t_bf38f1bc8b14fd 25
+  s_536f5cc99fcfc2::t_8dae71ad01fce4 29,42,54,62,73
+miniprogram/pages/services/services.wxml
+  s_536f5cc99fcfc2::t_8dae71ad01fce4 16,44,58
+  s_536f5cc99fcfc2::t_bf38f1bc8b14fd 24
+docs/superpowers/plans/2026-10-01-accessibility-mini-program.md
+  s_536f5cc99fcfc2::t_bf38f1bc8b14fd 16,284
+  s_536f5cc99fcfc2::t_a8c50ef0337109 298
+docs/superpowers/specs/2026-10-01-accessibility-mini-program-design.md
+  s_536f5cc99fcfc2::t_8dae71ad01fce4 68,85,113
+miniprogram/pages/settings/settings.wxml
+  s_536f5cc99fcfc2::t_8dae71ad01fce4 17,35
+miniprogram/pages/profile/profile.wxml
+  s_536f5cc99fcfc2::t_8dae71ad01fce4 13-14,28,53
+miniprogram/pages/detail/detail.wxml
+  s_536f5cc99fcfc2::t_8dae71ad01fce4 9,51,61
+  s_536f5cc99fcfc2::t_963944ae87854d 49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "f542fffefbf8eb5a610741636688f97859035021",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
