@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - 用户可见文案与新增代码注释使用简体中文。
-- 优先使用原生控件；自绘语义缺失时才用小程序支持的 `aria-label`、`aria-role` 和 `aria-hidden`。
+- 每个可操作控件均显式设置 `aria-label`；按钮名称说明操作及目标，原生选择控件名称描述用途、选中状态由控件自身提供。
 - 输入项始终显示文字标签；图标不独立承载名称；装饰色块不进入读屏节点。
 - 仅在首次启动且本地设置尚不存在时采用明确默认值：常规字号、标准对比度；不为服务记录必需字段添加兜底。
 - 不接入服务端、账号系统或真实联系操作；视频只有在用户提供直链后才呈现。
@@ -281,7 +281,7 @@ const visibleServices = services.filter((service) => {
 
 - [x] **Step 1: 检查无障碍节点与页面配置**
 
-运行 `rtk rg -n "bindtap|bindchange|<input|<switch|<checkbox|<radio|aria-|type=\"list\"" miniprogram/pages`。逐个检查交互节点是否使用原生控件、能否从可见文字理解名称、选择控件能否读出状态；检查装饰图片是否隐藏、每个滚动区域是否有列表语义。
+运行 `rtk rg -n "bindtap|bindchange|<input|<switch|<checkbox|<radio|aria-|type=\"list\"" miniprogram/pages`。逐个检查每个交互控件都有明确 `aria-label`，选择控件能读出状态；检查装饰图片是否隐藏、每个滚动区域是否有列表语义。
 
 - [x] **Step 2: 检查代码格式和数据完整性**
 
@@ -295,6 +295,6 @@ const visibleServices = services.filter((service) => {
 
 在开发者工具中检查节点树的可见名称、顺序和状态；对尚未连接的 iOS VoiceOver / Android TalkBack 只记录为待真机验证，不宣称已完成实际播报验证。
 
-> **集成走查记录（2026-10-02）：** 源码节点、五个页面路由、TabBar 路径、JSON 文件、服务记录必需字段和 `git diff --check` 已完成核对。微信开发者工具当前载入首页、服务列表和设置页；所见无障碍树包含有名称的按钮、搜索输入、分类单选及值、结果数量，以及设置开关状态；控制台无错误，提示为灰度基础库和自动热重载。完整交互流、详情页与个人中心的工具内节点树，以及大字/高对比跨 Tab 持久化走查尚未完成。运行 `hermes computer-use doctor` 后报告 `cua-driver: not installed`，因此暂时无法继续操作开发者工具；iOS VoiceOver / Android TalkBack 真机播报也仍待验证。
+> **集成走查记录（2026-10-02）：** 曾在微信开发者工具查看首页、服务列表和设置页的部分节点；后续逐页核对发现卡片按钮及原生筛选控件虽有可读文字，但缺少显式 `aria-label`。现已给所有页面交互控件补齐名称，并通过源码静态扫描确认 21 个原生交互节点都有 `aria-label`。修改后的开发者工具节点树、完整交互流、详情页与个人中心节点树，以及大字/高对比跨 Tab 持久化走查尚未复核。运行 `hermes computer-use doctor` 后报告 `cua-driver: not installed`；iOS VoiceOver / Android TalkBack 真机播报也仍待验证。
 
 > **视觉修正记录（2026-10-02）：** 原生 TabBar 已增加四组常态和选中态图标，同时保留文字名称。首页分类、首页推荐、服务结果、个人中心收藏和最近浏览卡片均由按钮节点自身循环输出，并明确指定横向 Flex、48% 不收缩基准宽度和左右零外边距。待开发者工具可操作时复核最终双列效果。

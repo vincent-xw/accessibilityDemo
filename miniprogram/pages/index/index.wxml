@@ -22,11 +22,11 @@
         placeholder="输入服务名称或关键词"
         placeholder-class="search-placeholder"
         confirm-type="search"
-        aria-label="搜索服务"
+        aria-label="输入服务名称或关键词搜索服务"
         bindinput="onSearchInput"
         bindconfirm="onSearchTap"
       />
-      <button class="button-primary search-button" bindtap="onSearchTap">搜索服务</button>
+      <button class="button-primary search-button" aria-label="搜索服务并查看匹配结果" bindtap="onSearchTap">搜索服务</button>
     </view>
 
     <view class="section-heading">
@@ -39,6 +39,7 @@
         wx:for-item="category"
         wx:key="id"
         class="category-card category-card--{{category.id}}"
+        aria-label="查看{{category.name}}分类服务"
         data-category-id="{{category.id}}"
         bindtap="onCategoryTap"
       >
@@ -50,7 +51,7 @@
 
     <view class="section-heading featured-heading">
       <text class="text-section-title" aria-role="header">推荐服务</text>
-      <button class="text-link text-body" bindtap="onAllServicesTap">查看全部</button>
+      <button class="text-link text-body" aria-label="查看全部生活服务" bindtap="onAllServicesTap">查看全部</button>
     </view>
     <view class="featured-grid">
       <button
@@ -58,6 +59,7 @@
         wx:for-item="service"
         wx:key="id"
         class="service-card surface-card"
+        aria-label="查看{{service.name}}详情，类别：{{service.categoryName}}，简介：{{service.summary}}"
         data-service-id="{{service.id}}"
         bindtap="onOpenService"
       >
@@ -68,7 +70,7 @@
     </view>
 
     <view class="notice-wrap">
-      <button class="button-secondary notice-button" bindtap="onNoticeTap">
+      <button class="button-secondary notice-button" aria-label="阅读服务信息说明，了解示例内容范围" bindtap="onNoticeTap">
         <text class="notice-title text-body">服务信息说明</text>
         <text class="notice-description text-caption">了解 Demo 内容与办理信息的使用范围</text>
       </button>

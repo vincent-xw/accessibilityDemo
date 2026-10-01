@@ -14,6 +14,7 @@
         </view>
         <switch
           id="large-text-switch"
+          aria-label="大字模式"
           checked="{{largeText}}"
           data-key="largeText"
           color="{{highContrast ? '#000000' : '#125c51'}}"
@@ -31,6 +32,7 @@
         </view>
         <switch
           id="high-contrast-switch"
+          aria-label="高对比模式"
           checked="{{highContrast}}"
           data-key="highContrast"
           color="{{highContrast ? '#000000' : '#125c51'}}"

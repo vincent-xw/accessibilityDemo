@@ -6,7 +6,7 @@
   <view wx:elif="{{notFound}}" class="status-page surface-card">
     <text class="text-title" aria-role="header">未找到该服务</text>
     <text class="text-body text-muted status-description">服务链接可能已失效，请返回服务列表重新选择。</text>
-    <button class="button-primary" bindtap="onBackToServices">返回服务列表</button>
+    <button class="button-primary" aria-label="返回服务列表" bindtap="onBackToServices">返回服务列表</button>
   </view>
 
   <scroll-view wx:else class="detail-scroll" scroll-y type="list" aria-label="服务详情内容">
@@ -46,9 +46,9 @@
     </view>
 
     <view class="favorite-panel surface-card">
-      <checkbox-group class="favorite-group" bindchange="onFavoriteChange">
+      <checkbox-group class="favorite-group" aria-label="管理该服务的收藏状态" bindchange="onFavoriteChange">
         <label class="favorite-label">
-          <checkbox value="{{service.id}}" checked="{{isFavorite}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
+          <checkbox aria-label="服务收藏，{{service.name}}" value="{{service.id}}" checked="{{isFavorite}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
           <view class="favorite-copy">
             <text class="text-body">收藏此服务</text>
             <text class="text-caption text-muted">{{isFavorite ? '已收藏' : '未收藏'}}</text>
@@ -58,7 +58,7 @@
     </view>
 
     <view class="contact-panel">
-      <button class="button-secondary contact-button" bindtap="onContactTap">查看联系说明</button>
+      <button class="button-secondary contact-button" aria-label="查看{{service.name}}的联系说明" bindtap="onContactTap">查看联系说明</button>
     </view>
   </scroll-view>
 </view>

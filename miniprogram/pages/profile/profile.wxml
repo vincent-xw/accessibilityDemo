@@ -10,8 +10,8 @@
 
     <view class="shortcut-panel surface-card">
       <text class="text-section-title" aria-role="header">常用功能</text>
-      <button class="button-secondary shortcut-button" bindtap="onOpenServices">浏览全部服务</button>
-      <button class="button-secondary shortcut-button" bindtap="onOpenSettings">无障碍设置</button>
+      <button class="button-secondary shortcut-button" aria-label="浏览全部生活服务" bindtap="onOpenServices">浏览全部服务</button>
+      <button class="button-secondary shortcut-button" aria-label="打开无障碍设置" bindtap="onOpenSettings">无障碍设置</button>
     </view>
 
     <view class="section-heading">
@@ -25,6 +25,7 @@
           wx:for-item="service"
           wx:key="id"
           class="profile-service surface-card"
+          aria-label="查看收藏服务{{service.name}}详情，简介：{{service.summary}}"
           data-service-id="{{service.id}}"
           bindtap="onOpenService"
         >
@@ -49,6 +50,7 @@
           wx:for-item="service"
           wx:key="id"
           class="profile-service surface-card"
+          aria-label="查看最近浏览服务{{service.name}}详情，简介：{{service.summary}}"
           data-service-id="{{service.id}}"
           bindtap="onOpenService"
         >
