@@ -1,0 +1,53 @@
+<view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
+  <scroll-view class="services-scroll" scroll-y type="list" aria-label="服务列表内容">
+    <view class="page-intro">
+      <text class="text-title" aria-role="header">生活服务</text>
+      <text class="text-body text-muted intro-description">搜索服务名称，或按类别筛选。</text>
+    </view>
+
+    <view class="filter-panel surface-card">
+      <text class="filter-title text-body">搜索服务</text>
+      <input
+        class="filter-input"
+        type="text"
+        value="{{keyword}}"
+        placeholder="输入服务名称或关键词"
+        placeholder-class="filter-placeholder"
+        aria-label="搜索服务"
+        bindinput="onKeywordInput"
+      />
+
+      <text class="filter-title text-body">筛选类别</text>
+      <radio-group class="category-filter" aria-label="按服务类别筛选" bindchange="onCategoryChange">
+        <block wx:for="{{filterOptions}}" wx:key="id" wx:for-item="option">
+          <label class="category-option">
+            <radio value="{{option.id}}" checked="{{selectedCategory === option.id}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
+            <text class="text-body">{{option.name}}</text>
+          </label>
+        </block>
+      </radio-group>
+    </view>
+
+    <view class="result-heading">
+      <text class="text-section-title" aria-role="header">服务结果</text>
+      <text class="text-caption text-muted">当前类别：{{selectedCategoryLabel}}</text>
+      <text class="text-body result-count">共 {{resultCount}} 项服务</text>
+    </view>
+
+    <block wx:if="{{hasResults}}">
+      <block wx:for="{{visibleServices}}" wx:key="id" wx:for-item="service">
+        <button class="service-result surface-card" data-service-id="{{service.id}}" bindtap="onOpenService">
+          <text class="result-category text-caption">{{service.categoryName}}</text>
+          <text class="result-name text-body">{{service.name}}</text>
+          <text class="result-summary text-caption text-muted">{{service.summary}}</text>
+        </button>
+      </block>
+    </block>
+
+    <view wx:else class="empty-state surface-card">
+      <text class="text-section-title" aria-role="header">暂时没有符合条件的服务</text>
+      <text class="text-body text-muted empty-description">可以清除关键词和类别筛选，再查看全部服务。</text>
+      <button class="button-primary" bindtap="onClearFilters">清除筛选</button>
+    </view>
+  </scroll-view>
+</view>

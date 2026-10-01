@@ -1,0 +1,64 @@
+<view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
+  <view wx:if="{{loading}}" class="status-page">
+    <text class="text-body">正在读取服务信息</text>
+  </view>
+
+  <view wx:elif="{{notFound}}" class="status-page surface-card">
+    <text class="text-title" aria-role="header">未找到该服务</text>
+    <text class="text-body text-muted status-description">服务链接可能已失效，请返回服务列表重新选择。</text>
+    <button class="button-primary" bindtap="onBackToServices">返回服务列表</button>
+  </view>
+
+  <scroll-view wx:else class="detail-scroll" scroll-y type="list" aria-label="服务详情内容">
+    <view class="detail-intro">
+      <text class="detail-category text-caption">{{service.categoryName}}</text>
+      <text class="text-title" aria-role="header">{{service.name}}</text>
+      <text class="detail-summary text-body">{{service.summary}}</text>
+    </view>
+
+    <view class="detail-meta surface-card">
+      <text class="meta-title text-body">办理时长</text>
+      <text class="text-body text-muted">{{service.duration}}</text>
+    </view>
+
+    <view class="detail-section surface-card">
+      <text class="text-section-title" aria-role="header">办理条件</text>
+      <view class="detail-list" aria-role="list">
+        <block wx:for="{{service.requirements}}" wx:key="*this" wx:for-item="requirement">
+          <view class="detail-list-item" aria-role="listitem">
+            <view class="list-marker" aria-hidden="true"></view>
+            <text class="text-body">{{requirement}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="detail-section surface-card">
+      <text class="text-section-title" aria-role="header">办理步骤</text>
+      <view class="detail-list" aria-role="list">
+        <block wx:for="{{service.steps}}" wx:key="*this" wx:for-item="step">
+          <view class="detail-list-item" aria-role="listitem">
+            <text class="step-number text-caption" aria-hidden="true">{{index + 1}}</text>
+            <text class="text-body">{{step}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="favorite-panel surface-card">
+      <checkbox-group class="favorite-group" bindchange="onFavoriteChange">
+        <label class="favorite-label">
+          <checkbox value="{{service.id}}" checked="{{isFavorite}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
+          <view class="favorite-copy">
+            <text class="text-body">收藏此服务</text>
+            <text class="text-caption text-muted">{{isFavorite ? '已收藏' : '未收藏'}}</text>
+          </view>
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="contact-panel">
+      <button class="button-secondary contact-button" bindtap="onContactTap">查看联系说明</button>
+    </view>
+  </scroll-view>
+</view>

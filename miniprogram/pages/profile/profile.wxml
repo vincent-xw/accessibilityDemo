@@ -1,0 +1,51 @@
+<view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
+  <scroll-view class="profile-scroll" scroll-y type="list" aria-label="个人中心内容">
+    <view class="profile-header surface-card">
+      <view class="demo-avatar" aria-hidden="true">D</view>
+      <view class="profile-identity">
+        <text class="text-title" aria-role="header">Demo 用户</text>
+        <text class="text-caption text-muted">本地示例资料，不代表真实个人信息</text>
+      </view>
+    </view>
+
+    <view class="shortcut-panel surface-card">
+      <text class="text-section-title" aria-role="header">常用功能</text>
+      <button class="button-secondary shortcut-button" bindtap="onOpenServices">浏览全部服务</button>
+      <button class="button-secondary shortcut-button" bindtap="onOpenSettings">无障碍设置</button>
+    </view>
+
+    <view class="section-heading">
+      <text class="text-section-title" aria-role="header">我的收藏</text>
+      <text class="text-caption text-muted">收藏的服务会保存在本机</text>
+    </view>
+    <block wx:if="{{hasFavorites}}">
+      <block wx:for="{{favoriteServices}}" wx:key="id" wx:for-item="service">
+        <button class="profile-service surface-card" data-service-id="{{service.id}}" bindtap="onOpenService">
+          <text class="profile-service-name text-body">{{service.name}}</text>
+          <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
+        </button>
+      </block>
+    </block>
+    <view wx:else class="empty-state surface-card">
+      <text class="text-body">还没有收藏的服务</text>
+      <text class="text-caption text-muted">打开服务详情并勾选“收藏此服务”后，会显示在这里。</text>
+    </view>
+
+    <view class="section-heading">
+      <text class="text-section-title" aria-role="header">最近浏览</text>
+      <text class="text-caption text-muted">最近打开的服务显示在这里</text>
+    </view>
+    <block wx:if="{{hasRecentServices}}">
+      <block wx:for="{{recentServices}}" wx:key="id" wx:for-item="service">
+        <button class="profile-service surface-card" data-service-id="{{service.id}}" bindtap="onOpenService">
+          <text class="profile-service-name text-body">{{service.name}}</text>
+          <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
+        </button>
+      </block>
+    </block>
+    <view wx:else class="empty-state surface-card">
+      <text class="text-body">还没有浏览记录</text>
+      <text class="text-caption text-muted">打开任意服务详情后，最近浏览会显示在这里。</text>
+    </view>
+  </scroll-view>
+</view>

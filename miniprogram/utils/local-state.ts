@@ -17,6 +17,7 @@ const DEFAULT_PREFERENCES: AccessibilityPreferences = {
 
 /** 读取显示偏好；没有本地记录代表首次启动，使用明确初始值。 */
 export function loadAccessibilityPreferences(): AccessibilityPreferences {
+  // 只在本地存储不存在时使用新用户的明确初始偏好。
   const storedPreferences = wx.getStorageSync<AccessibilityPreferences | ''>(PREFERENCES_KEY)
 
   if (storedPreferences === '') {
@@ -33,6 +34,7 @@ export function saveAccessibilityPreferences(preferences: AccessibilityPreferenc
 
 /** 读取收藏 ID；新安装时尚无收藏，因此返回空列表。 */
 export function loadFavoriteIds(): string[] {
+  // 首次启动没有收藏记录，空数组代表尚未收藏任何服务。
   const storedIds = wx.getStorageSync<string[] | ''>(FAVORITE_IDS_KEY)
   return storedIds === '' ? [] : storedIds
 }
@@ -44,6 +46,7 @@ export function saveFavoriteIds(ids: string[]): void {
 
 /** 读取最近浏览 ID；新安装时尚无浏览记录，因此返回空列表。 */
 export function loadRecentServiceIds(): string[] {
+  // 首次启动没有浏览历史，空数组代表尚未打开详情页。
   const storedIds = wx.getStorageSync<string[] | ''>(RECENT_IDS_KEY)
   return storedIds === '' ? [] : storedIds
 }

@@ -1,0 +1,148 @@
+.page-shell {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+.detail-scroll {
+  flex: 1;
+  height: 0;
+  min-height: 0;
+  padding-bottom: 36rpx;
+}
+
+.detail-intro {
+  padding: 8rpx 0 12rpx;
+}
+
+.detail-category {
+  display: block;
+  margin-bottom: 8rpx;
+  color: #285f53;
+  font-weight: 700;
+}
+
+.detail-summary {
+  display: block;
+  margin-top: 14rpx;
+}
+
+.detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.meta-title {
+  font-weight: 700;
+}
+
+.detail-section {
+  margin-top: 24rpx;
+}
+
+.detail-list {
+  margin-top: 16rpx;
+}
+
+.detail-list-item {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 16rpx;
+}
+
+.detail-list-item:first-child {
+  margin-top: 0;
+}
+
+.list-marker {
+  flex: none;
+  width: 14rpx;
+  height: 14rpx;
+  margin: 18rpx 16rpx 0 4rpx;
+  border-radius: 50%;
+  background-color: #155c52;
+}
+
+.step-number {
+  display: flex;
+  flex: none;
+  width: 44rpx;
+  height: 44rpx;
+  align-items: center;
+  justify-content: center;
+  margin: 2rpx 14rpx 0 0;
+  border-radius: 50%;
+  background-color: #e4f0ec;
+  color: #184a42;
+  font-weight: 700;
+}
+
+.favorite-panel {
+  margin-top: 24rpx;
+}
+
+.favorite-group,
+.favorite-label {
+  display: flex;
+  width: 100%;
+}
+
+.favorite-label {
+  min-height: 96rpx;
+  align-items: center;
+}
+
+.favorite-label checkbox {
+  flex: none;
+  margin-right: 18rpx;
+}
+
+.favorite-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.contact-panel {
+  margin-top: 24rpx;
+}
+
+.contact-button {
+  width: 100%;
+  margin: 0;
+}
+
+.status-page {
+  display: flex;
+  min-height: 280rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+.status-description {
+  margin: 14rpx 0 24rpx;
+}
+
+.status-page .button-primary {
+  width: 100%;
+  margin: 0;
+}
+
+.page-shell--contrast .detail-category {
+  color: #000000;
+  background-color: transparent;
+}
+
+.page-shell--contrast .list-marker {
+  background-color: #000000;
+}
+
+.page-shell--contrast .step-number {
+  border: 2rpx solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+}

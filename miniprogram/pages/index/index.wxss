@@ -1,62 +1,308 @@
-/**index.wxss**/
-page {
+.page-shell {
+  display: flex;
   height: 100vh;
-  display: flex;
   flex-direction: column;
+  padding-bottom: 0;
 }
-.scrollarea {
+
+.home-scroll {
   flex: 1;
-  overflow-y: hidden;
+  height: 0;
+  min-height: 0;
+  padding-bottom: 36rpx;
 }
 
-.userinfo {
+.home-hero {
+  position: relative;
+  display: flex;
+  min-height: 260rpx;
+  align-items: center;
+  overflow: hidden;
+  border: 0;
+  background: linear-gradient(135deg, #d8eee5 0%, #edf7f0 68%, #dceee9 100%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 78%;
+}
+
+.hero-eyebrow {
+  display: block;
+  margin-bottom: 12rpx;
+  color: #285f53;
+  font-weight: 600;
+}
+
+.hero-description {
+  display: block;
+  margin-top: 16rpx;
+  color: #28463f;
+}
+
+.hero-art {
+  position: absolute;
+  top: 12rpx;
+  right: 8rpx;
+  width: 180rpx;
+  height: 220rpx;
+}
+
+.hero-circle {
+  position: absolute;
+  top: 4rpx;
+  right: 2rpx;
+  width: 146rpx;
+  height: 146rpx;
+  border-radius: 50%;
+  background-color: #a9d8c4;
+}
+
+.hero-block {
+  position: absolute;
+  right: 44rpx;
+  bottom: 6rpx;
+  width: 104rpx;
+  height: 112rpx;
+  border: 8rpx solid #ffffff;
+  border-radius: 30rpx 30rpx 16rpx 16rpx;
+  background-color: #77bba3;
+  transform: rotate(-8deg);
+}
+
+.hero-dot {
+  position: absolute;
+  right: 118rpx;
+  bottom: 42rpx;
+  width: 22rpx;
+  height: 22rpx;
+  border-radius: 50%;
+  background-color: #2e7867;
+}
+
+.search-panel {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: #aaa;
-  width: 80%;
+  gap: 16rpx;
 }
 
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.search-label {
+  font-weight: 700;
 }
 
-.usermotto {
-  margin-top: 200px;
+.search-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 96rpx;
+  padding: 20rpx 22rpx;
+  border: 2rpx solid #687c75;
+  border-radius: 16rpx;
+  background-color: #ffffff;
+  color: #18332f;
+  font-size: 30rpx;
+  line-height: 1.5;
 }
 
-.avatar-wrapper {
-  padding: 0;
-  width: 56px !important;
-  border-radius: 8px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+.search-placeholder {
+  color: #40534f;
 }
 
-.avatar {
+.search-button {
+  width: 100%;
+  margin: 0;
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+  margin-top: 40rpx;
+}
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 14rpx;
+}
+
+.category-card {
+  display: flex;
+  width: 48%;
+  min-height: 176rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 0 16rpx;
+  padding: 22rpx;
+  border: 2rpx solid #d9e4df;
+  border-radius: 22rpx;
+  background-color: #ffffff;
+  color: #18332f;
+  line-height: 1.45;
+  text-align: left;
+  white-space: normal;
+}
+
+.category-card::after {
+  border: 0;
+}
+
+.category-card--government {
+  border-top: 8rpx solid #247662;
+}
+
+.category-card--daily-life {
+  border-top: 8rpx solid #587b35;
+}
+
+.category-card--travel {
+  border-top: 8rpx solid #396c91;
+}
+
+.category-card--culture {
+  border-top: 8rpx solid #815b85;
+}
+
+.category-mark {
+  width: 28rpx;
+  height: 8rpx;
+  margin-bottom: 12rpx;
+  border-radius: 8rpx;
+  background-color: #155c52;
+}
+
+.category-name,
+.category-action {
   display: block;
-  width: 56px;
-  height: 56px;
 }
 
-.nickname-wrapper {
+.category-name {
+  font-weight: 700;
+}
+
+.category-action {
+  margin-top: 4rpx;
+  color: #40534f;
+}
+
+.featured-heading {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-link {
+  margin: 0;
+  padding: 12rpx 4rpx;
+  background: transparent;
+  color: #145c50;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.text-link::after {
+  border: 0;
+}
+
+.service-card {
   display: flex;
   width: 100%;
-  padding: 16px;
-  box-sizing: border-box;
-  border-top: .5px solid rgba(0, 0, 0, 0.1);
-  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
-  color: black;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 0;
+  margin-left: 0;
+  color: #18332f;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
 }
 
-.nickname-label {
-  width: 105px;
+.service-card::after {
+  border: 0;
 }
 
-.nickname-input {
-  flex: 1;
+.service-category,
+.service-name,
+.service-summary {
+  display: block;
+}
+
+.service-category {
+  color: #285f53;
+  font-weight: 600;
+}
+
+.service-name {
+  margin-top: 8rpx;
+  font-weight: 700;
+}
+
+.service-summary {
+  margin-top: 8rpx;
+}
+
+.notice-wrap {
+  margin-top: 36rpx;
+}
+
+.notice-button {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+  text-align: left;
+  white-space: normal;
+}
+
+.notice-button::after {
+  border: 0;
+}
+
+.notice-title,
+.notice-description {
+  display: block;
+}
+
+.notice-description {
+  margin-top: 6rpx;
+}
+
+.page-shell--contrast .home-hero,
+.page-shell--contrast .category-card--government,
+.page-shell--contrast .category-card--daily-life,
+.page-shell--contrast .category-card--travel,
+.page-shell--contrast .category-card--culture {
+  border-color: #000000;
+}
+
+.page-shell--contrast .home-hero {
+  border: 3rpx solid #000000;
+  background: #ffffff;
+}
+
+.page-shell--contrast .search-input {
+  border: 3rpx solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.page-shell--large .search-input {
+  min-height: 112rpx;
+  font-size: 38rpx;
+}
+
+.page-shell--contrast .hero-art {
+  display: none;
+}
+
+.page-shell--contrast .hero-copy,
+.page-shell--contrast .hero-eyebrow,
+.page-shell--contrast .hero-description,
+.page-shell--contrast .service-category,
+.page-shell--contrast .text-link {
+  color: #000000;
 }

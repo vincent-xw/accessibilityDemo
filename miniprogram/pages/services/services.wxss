@@ -1,0 +1,156 @@
+.page-shell {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+.services-scroll {
+  flex: 1;
+  height: 0;
+  min-height: 0;
+  padding-bottom: 36rpx;
+}
+
+.page-intro {
+  margin-bottom: 24rpx;
+}
+
+.intro-description {
+  display: block;
+  margin-top: 10rpx;
+}
+
+.filter-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-title {
+  display: block;
+  margin-bottom: 10rpx;
+  font-weight: 700;
+}
+
+.filter-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 96rpx;
+  margin-bottom: 26rpx;
+  padding: 18rpx 22rpx;
+  border: 2rpx solid #687c75;
+  border-radius: 16rpx;
+  background-color: #ffffff;
+  color: #18332f;
+  font-size: 30rpx;
+  line-height: 1.5;
+}
+
+.filter-placeholder {
+  color: #40534f;
+}
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.category-option {
+  display: flex;
+  width: 48%;
+  min-height: 96rpx;
+  box-sizing: border-box;
+  align-items: center;
+  margin-bottom: 10rpx;
+  padding: 12rpx 10rpx;
+  border: 2rpx solid #d9e4df;
+  border-radius: 16rpx;
+  background-color: #ffffff;
+}
+
+.category-option radio {
+  flex: none;
+  margin-right: 8rpx;
+}
+
+.result-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+  margin: 36rpx 0 12rpx;
+}
+
+.result-count {
+  color: #40534f;
+}
+
+.service-result {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 0;
+  margin-left: 0;
+  color: #18332f;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+}
+
+.service-result::after {
+  border: 0;
+}
+
+.result-category,
+.result-name,
+.result-summary {
+  display: block;
+}
+
+.result-category {
+  color: #285f53;
+  font-weight: 600;
+}
+
+.result-name {
+  margin-top: 8rpx;
+  font-weight: 700;
+}
+
+.result-summary {
+  margin-top: 8rpx;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.empty-description {
+  margin: 12rpx 0 22rpx;
+}
+
+.empty-state .button-primary {
+  width: 100%;
+  margin: 0;
+}
+
+.page-shell--large .filter-input {
+  min-height: 112rpx;
+  font-size: 38rpx;
+}
+
+.page-shell--contrast .filter-input,
+.page-shell--contrast .category-option {
+  border: 3rpx solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.page-shell--contrast .filter-placeholder,
+.page-shell--contrast .result-count,
+.page-shell--contrast .result-category {
+  color: #000000;
+}
