@@ -1,0 +1,20 @@
+docs/superpowers/specs/2026-10-01-accessibility-mini-program-design.md
+  s_536f5cc99fcfc2::t_65223dc49380ac 68,75-86,104
+  s_536f5cc99fcfc2::t_caf58f53efda85 1-67,69-74,87-103,105-119
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "0844c89c026edb74d7653689293868d4e94c772e",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
