@@ -34,17 +34,18 @@
       <text class="text-caption text-muted">选择分类查看相关服务</text>
     </view>
     <view class="category-grid">
-      <block wx:for="{{serviceCategories}}" wx:key="id" wx:for-item="category">
-        <button
-          class="category-card category-card--{{category.id}}"
-          data-category-id="{{category.id}}"
-          bindtap="onCategoryTap"
-        >
-          <view class="category-mark" aria-hidden="true"></view>
-          <text class="category-name text-body">{{category.name}}</text>
-          <text class="category-action text-caption">查看服务</text>
-        </button>
-      </block>
+      <button
+        wx:for="{{serviceCategories}}"
+        wx:for-item="category"
+        wx:key="id"
+        class="category-card category-card--{{category.id}}"
+        data-category-id="{{category.id}}"
+        bindtap="onCategoryTap"
+      >
+        <view class="category-mark" aria-hidden="true"></view>
+        <text class="category-name text-body">{{category.name}}</text>
+        <text class="category-action text-caption">查看服务</text>
+      </button>
     </view>
 
     <view class="section-heading featured-heading">
