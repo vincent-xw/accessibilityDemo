@@ -1,0 +1,104 @@
+miniprogram/pages/profile/profile.ts
+  s_536f5cc99fcfc2::t_d89733a2ea8ef3 1-64
+docs/superpowers/plans/2026-10-01-accessibility-mini-program.md
+  s_536f5cc99fcfc2::t_95d1683222042b 104,108,112,120
+  s_536f5cc99fcfc2::t_4b10dc46f49995 134
+  s_536f5cc99fcfc2::t_d6a5d14cff3f90 37,150
+  s_536f5cc99fcfc2::t_8fa1df7c49321a 253,257,261
+  s_536f5cc99fcfc2::t_c1adfd2a7ab3c6 162,183,231
+  s_536f5cc99fcfc2::t_7dcf00453e5322 281,285,296-297
+  s_536f5cc99fcfc2::t_721ff26e6e679f 17,138
+  s_536f5cc99fcfc2::t_efd9e1ed49981b 1-16,18-27,29-36,38-49,51-67,69,71-87,89-101,103,105-107,109,111,113-119,121-133,135,137,139,141-143,145,147,149,151-160,163,165,167,169-180,182,184,186-198,200,202-204,206-208,210-212,214-228,230,232,234,236,238-250,252,254-256,258-260,262-280,282-284,286-295
+  s_536f5cc99fcfc2::t_17bc0644f2989b 199
+  s_536f5cc99fcfc2::t_b26b4a155cc857 28,68,102,110,146,161,166,235
+  s_536f5cc99fcfc2::t_a7d3bf02735290 164,168,181,185
+  s_536f5cc99fcfc2::t_21ed015f723022 201,205,209,213
+  s_536f5cc99fcfc2::t_b1c20ee7db7c61 251
+  s_536f5cc99fcfc2::t_26e17a6709ec03 50,70,88
+  s_536f5cc99fcfc2::t_dfa4f2fb0d4990 136,140,144,148
+  s_536f5cc99fcfc2::t_92997ac19b3523 229,233,237
+miniprogram/pages/services/services.ts
+  s_536f5cc99fcfc2::t_3a69e694ff8a42 56,58,87,100,126
+  s_536f5cc99fcfc2::t_c1adfd2a7ab3c6 14-22,45,69,105,117
+  s_536f5cc99fcfc2::t_b5cda6d31e1ed6 1-13,23-44,46-55,57,59-68,70-86,88-99,101-104,106-116,118-125,127-130
+miniprogram/pages/services/services.wxml
+  s_536f5cc99fcfc2::t_c1adfd2a7ab3c6 33
+  s_536f5cc99fcfc2::t_b5cda6d31e1ed6 1-23,25-32,34-53
+  s_536f5cc99fcfc2::t_6839ecd3f354b4 24
+typings/index.d.ts
+  s_536f5cc99fcfc2::t_3e062b105efc0d 6-10,13
+miniprogram/pages/detail/detail.ts
+  s_536f5cc99fcfc2::t_ad852ef22f4a5c 1-45,47,49-58,60-66,68-78,80-94,96-103
+  s_536f5cc99fcfc2::t_781fcc66507d81 46,48,59,67,79,95
+miniprogram/pages/detail/detail.wxss
+  s_536f5cc99fcfc2::t_64cf7b54c1ba87 135,137-140
+  s_536f5cc99fcfc2::t_ad852ef22f4a5c 1-134,136,141-148
+miniprogram/pages/detail/detail.json
+  s_536f5cc99fcfc2::t_ad852ef22f4a5c 1-4
+miniprogram/pages/settings/settings.ts
+  s_536f5cc99fcfc2::t_6839ecd3f354b4 28-35,37
+  s_536f5cc99fcfc2::t_0d2a0e8d8441c9 1-27,36,38-53
+miniprogram/pages/index/index.ts
+  s_536f5cc99fcfc2::t_afde7402fb1c9e 1,3,5-8,10-18,20-33,35-45,47,49-51,64-71,73-84
+  s_536f5cc99fcfc2::t_05c5b8eaf0649e 2,52-59,61-63
+  s_536f5cc99fcfc2::t_150095f5d566dd 19,34,46,48,60,72
+miniprogram/pages/services/services.json
+  s_536f5cc99fcfc2::t_b5cda6d31e1ed6 1-4
+miniprogram/pages/settings/settings.json
+  s_536f5cc99fcfc2::t_0d2a0e8d8441c9 1-4
+miniprogram/pages/profile/profile.wxml
+  s_536f5cc99fcfc2::t_d89733a2ea8ef3 1-51
+miniprogram/app.ts
+  s_536f5cc99fcfc2::t_3e062b105efc0d 3
+miniprogram/pages/profile/profile.json
+  s_536f5cc99fcfc2::t_d89733a2ea8ef3 1-4
+docs/superpowers/specs/2026-10-01-accessibility-mini-program-design.md
+  s_536f5cc99fcfc2::t_721ff26e6e679f 79
+  s_536f5cc99fcfc2::t_d6a5d14cff3f90 25,91,103
+miniprogram/app.wxss
+  s_536f5cc99fcfc2::t_ba26601205a729 1-9,11-124
+miniprogram/utils/local-state.ts
+  s_536f5cc99fcfc2::t_150095f5d566dd 20,37,49
+miniprogram/app.json
+  s_536f5cc99fcfc2::t_3e062b105efc0d 4-7,11-37,42
+miniprogram/pages/services/services.wxss
+  s_536f5cc99fcfc2::t_b5cda6d31e1ed6 1-156
+miniprogram/pages/profile/profile.wxss
+  s_536f5cc99fcfc2::t_d89733a2ea8ef3 1-108
+miniprogram/pages/index/index.wxml
+  s_536f5cc99fcfc2::t_bd32fc4f871b93 1-45,49-51,53-70,72-73
+  s_536f5cc99fcfc2::t_4b10dc46f49995 52
+miniprogram/pages/index/index.wxss
+  s_536f5cc99fcfc2::t_8b6151428d9e32 274,280-282,284-295
+  s_536f5cc99fcfc2::t_150095f5d566dd 283
+  s_536f5cc99fcfc2::t_aa6b2935486631 1,3,5,7-8,10-12,15-16,18,20-22,25-57,59-153,156-157,160-161,164-177,181-209,212-219,222-223,226-273,275-279,296-307
+miniprogram/pages/index/index.json
+  s_536f5cc99fcfc2::t_8b6151428d9e32 2-4
+miniprogram/pages/settings/settings.wxss
+  s_536f5cc99fcfc2::t_0d2a0e8d8441c9 1-53,60-87
+  s_536f5cc99fcfc2::t_c1adfd2a7ab3c6 54-59
+miniprogram/pages/detail/detail.wxml
+  s_536f5cc99fcfc2::t_781fcc66507d81 3
+  s_536f5cc99fcfc2::t_6839ecd3f354b4 51
+  s_536f5cc99fcfc2::t_ad852ef22f4a5c 1-2,4-50,52-64
+miniprogram/pages/settings/settings.wxml
+  s_536f5cc99fcfc2::t_0d2a0e8d8441c9 1-12,14-18,20-29,31-35,37-47
+  s_536f5cc99fcfc2::t_c1adfd2a7ab3c6 13,30
+  s_536f5cc99fcfc2::t_6839ecd3f354b4 19,36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "3ebfb431303a2aca994414695a538f3fbd4c1929",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
