@@ -35,13 +35,20 @@
     </view>
 
     <block wx:if="{{hasResults}}">
-      <block wx:for="{{visibleServices}}" wx:key="id" wx:for-item="service">
-        <button class="service-result surface-card" data-service-id="{{service.id}}" bindtap="onOpenService">
+      <view class="service-results-grid">
+        <button
+          wx:for="{{visibleServices}}"
+          wx:for-item="service"
+          wx:key="id"
+          class="service-result surface-card"
+          data-service-id="{{service.id}}"
+          bindtap="onOpenService"
+        >
           <text class="result-category text-caption">{{service.categoryName}}</text>
           <text class="result-name text-body">{{service.name}}</text>
           <text class="result-summary text-caption text-muted">{{service.summary}}</text>
         </button>
-      </block>
+      </view>
     </block>
 
     <view wx:else class="empty-state surface-card">

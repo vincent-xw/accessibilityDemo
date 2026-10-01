@@ -19,12 +19,19 @@
       <text class="text-caption text-muted">收藏的服务会保存在本机</text>
     </view>
     <block wx:if="{{hasFavorites}}">
-      <block wx:for="{{favoriteServices}}" wx:key="id" wx:for-item="service">
-        <button class="profile-service surface-card" data-service-id="{{service.id}}" bindtap="onOpenService">
+      <view class="profile-service-grid">
+        <button
+          wx:for="{{favoriteServices}}"
+          wx:for-item="service"
+          wx:key="id"
+          class="profile-service surface-card"
+          data-service-id="{{service.id}}"
+          bindtap="onOpenService"
+        >
           <text class="profile-service-name text-body">{{service.name}}</text>
           <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
         </button>
-      </block>
+      </view>
     </block>
     <view wx:else class="empty-state surface-card">
       <text class="text-body">还没有收藏的服务</text>
@@ -36,12 +43,19 @@
       <text class="text-caption text-muted">最近打开的服务显示在这里</text>
     </view>
     <block wx:if="{{hasRecentServices}}">
-      <block wx:for="{{recentServices}}" wx:key="id" wx:for-item="service">
-        <button class="profile-service surface-card" data-service-id="{{service.id}}" bindtap="onOpenService">
+      <view class="profile-service-grid">
+        <button
+          wx:for="{{recentServices}}"
+          wx:for-item="service"
+          wx:key="id"
+          class="profile-service surface-card"
+          data-service-id="{{service.id}}"
+          bindtap="onOpenService"
+        >
           <text class="profile-service-name text-body">{{service.name}}</text>
           <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
         </button>
-      </block>
+      </view>
     </block>
     <view wx:else class="empty-state surface-card">
       <text class="text-body">还没有浏览记录</text>
