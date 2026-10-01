@@ -25,6 +25,7 @@
 ## 文件结构
 
 - `miniprogram/app.json`：五个业务页面路由、窗口标题和四项原生 TabBar。
+- `miniprogram/assets/tabbar/`：TabBar 四项的常态和选中态本地 PNG 图标，文字标签保留为无障碍名称。
 - `miniprogram/app.ts`、`typings/index.d.ts`：移除模板启动日志和登录请求，定义首页传给服务 Tab 的待处理查询对象。
 - `miniprogram/app.wxss`：全局页面底色、正文颜色、主题色和大字/高对比主题类。
 - `miniprogram/data/services.ts`：服务类别、服务记录类型、分类和示例记录。
@@ -34,7 +35,7 @@
 - `miniprogram/pages/detail/`：服务说明、收藏、联系提示和最近浏览更新。
 - `miniprogram/pages/settings/`：大字与高对比开关。
 - `miniprogram/pages/profile/`：Demo 身份、收藏和最近浏览。
-- 首页主视觉由 WXSS 色块和可读文字构成，无额外图片资源。
+- 首页主视觉由 WXSS 色块和可读文字构成，不含插画；TabBar 图标单独放在 `miniprogram/assets/tabbar/`。
 
 ## Task 1: 建立共享服务模型与本地状态模块
 
@@ -103,7 +104,7 @@ export function recordRecentService(id: string): string[] {
 
 - [x] **Step 1: 更新应用路由和 TabBar**
 
-在 `app.json` 注册 `pages/index/index`、`pages/services/services`、`pages/detail/detail`、`pages/settings/settings`、`pages/profile/profile`。原生 TabBar 仅包含首页、服务、设置、我的；详情页保留为普通页面。移除日志页路由，不删除模板日志文件。
+在 `app.json` 注册 `pages/index/index`、`pages/services/services`、`pages/detail/detail`、`pages/settings/settings`、`pages/profile/profile`。原生 TabBar 仅包含首页、服务、设置、我的；每项使用本地常态和选中态 PNG 图标，并保留文字标签。详情页保留为普通页面。移除日志页路由，不删除模板日志文件。
 
 - [x] **Step 2: 定义短生命周期的导航参数并移除模板启动副作用**
 
@@ -135,7 +136,7 @@ export function recordRecentService(id: string): string[] {
 
 - [x] **Step 1: 制作首页文字与色块主视觉**
 
-用 WXSS 色块和页内文字构成清爽的社区生活服务主视觉；色块纯属装饰并从读屏节点隐藏，标题文字保留给读屏用户。首版不生成或引用图片资源。
+用 WXSS 色块和页内文字构成清爽的社区生活服务主视觉；色块纯属装饰并从读屏节点隐藏，标题文字保留给读屏用户。首页主视觉不生成或引用插画资源。
 
 - [x] **Step 2: 构建首页内容层级**
 
@@ -147,7 +148,7 @@ export function recordRecentService(id: string): string[] {
 
 - [x] **Step 4: 完成首页样式并检查节点**
 
-在 WXSS 保证搜索框、分类入口和卡片按钮拥有至少约 48 CSS px 的操作高度；色块只作装饰。用 `rtk rg -n "button|input|type=\"list\"|bindtap" miniprogram/pages/index/index.wxml` 检查输入标签和按钮文字均存在。
+在 WXSS 保证搜索框、分类入口和卡片按钮拥有至少约 48 CSS px 的操作高度；分类卡片使用 Flex 双列布局和 `box-sizing: border-box`；色块只作装饰。用 `rtk rg -n "button|input|type=\"list\"|bindtap" miniprogram/pages/index/index.wxml` 检查输入标签和按钮文字均存在。
 
 ## Task 4: 实现服务列表、搜索和分类筛选
 
@@ -295,3 +296,5 @@ const visibleServices = services.filter((service) => {
 在开发者工具中检查节点树的可见名称、顺序和状态；对尚未连接的 iOS VoiceOver / Android TalkBack 只记录为待真机验证，不宣称已完成实际播报验证。
 
 > **集成走查记录（2026-10-02）：** 源码节点、五个页面路由、TabBar 路径、JSON 文件、服务记录必需字段和 `git diff --check` 已完成核对。微信开发者工具当前载入首页、服务列表和设置页；所见无障碍树包含有名称的按钮、搜索输入、分类单选及值、结果数量，以及设置开关状态；控制台无错误，提示为灰度基础库和自动热重载。完整交互流、详情页与个人中心的工具内节点树，以及大字/高对比跨 Tab 持久化走查尚未完成。运行 `hermes computer-use doctor` 后报告 `cua-driver: not installed`，因此暂时无法继续操作开发者工具；iOS VoiceOver / Android TalkBack 真机播报也仍待验证。
+
+> **视觉修正记录（2026-10-02）：** 分类入口按钮使用边框盒尺寸以支持双列排列；原生 TabBar 增加四组常态和选中态图标，同时保留文字名称。此项已按后续反馈加入实现。

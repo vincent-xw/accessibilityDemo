@@ -128,6 +128,7 @@
 }
 
 .category-card {
+  box-sizing: border-box;
   display: flex;
   width: 48%;
   min-height: 176rpx;
