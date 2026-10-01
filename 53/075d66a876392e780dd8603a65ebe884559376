@@ -1,0 +1,21 @@
+miniprogram/data/services.ts
+  s_536f5cc99fcfc2::t_8aee7e8f76d617 1-121
+miniprogram/utils/local-state.ts
+  s_536f5cc99fcfc2::t_8aee7e8f76d617 1-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "53075d66a876392e780dd8603a65ebe884559376",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
