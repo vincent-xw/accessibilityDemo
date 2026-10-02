@@ -1,0 +1,23 @@
+miniprogram/data/services.ts
+  s_536f5cc99fcfc2::t_518db4ef323d4b 10-30,42,131-132
+miniprogram/pages/detail/detail.wxss
+  s_536f5cc99fcfc2::t_7d64df9f8ace36 41-73,182-189
+miniprogram/pages/detail/detail.wxml
+  s_536f5cc99fcfc2::t_a44d193058b0e7 24-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "4dbae2a3089554d3370b10957f0c31530ded4f9c",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
