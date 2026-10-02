@@ -25,11 +25,11 @@
 ## 文件结构
 
 - 修改 `miniprogram/app.json`：注册不占 Tab 的 `pages/appointment/appointment`。
-- 修改 `miniprogram/data/services.ts`：已声明可选媒体字段；`community-events` 当前只有空媒体槽位，图片与视频对象待用户提供素材后加入。
+- 修改 `miniprogram/data/services.ts`：已声明可选媒体字段；`community-events` 已接入本地活动图片，视频对象待用户提供完整素材后加入。
 - 修改五个现有业务页面的 WXML/TS/WXSS：修正冗余名称，补可见标签关联、列表位置语义和动态结果播报。
 - 修改 `miniprogram/pages/detail/`：呈现图片、视频状态/播放器、文字说明和报名入口。
 - 新建 `miniprogram/pages/appointment/appointment.{json,ts,wxml,wxss}`：实现本地表单与字段级错误。
-- 待取得用户本地图片后加入 `miniprogram/assets/media/`；当前目录和社区活动图片文件均不存在。
+- 用户提供的社区活动图片位于 `miniprogram/assets/温馨多代同堂的社区活动空间.png`，并由服务数据配置路径、替代说明和图注。
 - 更新本计划和设计文档中的实现记录。
 
 ## Task 1: 完善既有页面的节点关系和状态
@@ -79,7 +79,7 @@
 - Modify: `miniprogram/data/services.ts`
 - Modify: `miniprogram/pages/detail/detail.wxml`
 - Modify: `miniprogram/pages/detail/detail.wxss`
-- Create: `miniprogram/assets/media/community-events.png`
+- Use: `miniprogram/assets/温馨多代同堂的社区活动空间.png`
 
 **Interfaces:**
 
@@ -101,23 +101,23 @@ export interface ServiceMedia {
 }
 ```
 
-实际实现为 `ServiceRecord.media?: ServiceMedia`，其中 `image?: { src; label; caption }`、`video?: ServiceVideo` 均为可选对象；`community-events` 当前为 `media: {}`。收到用户本地图片后须同时填写三个图片字段；视频配置仍为整体对象，避免只有 URL、没有无障碍文字内容。
+实际实现为 `ServiceRecord.media?: ServiceMedia`，其中 `image?: { src; label; caption }`、`video?: ServiceVideo` 均为可选对象；`community-events` 已配置本地图片的三个字段，视频配置仍为整体对象，避免只有 URL、没有无障碍文字内容。
 
-- [ ] **Step 1: 生成不含文字的本地社区活动插画**
+- [x] **Step 1: 接入用户提供的本地社区活动图片**
 
-等待用户提供本地社区活动图片；收到后放入 `miniprogram/assets/media/`，图片解释文案写在数据字段，而不是像素中。当前未提供素材，此步骤待完成。
+用户提供的 PNG 已位于 `miniprogram/assets/`。图片本身不承载必要文字，解释文案放在服务数据字段中。
 
-- [ ] **Step 2: 为活动服务记录添加显式媒体数据**
+- [x] **Step 2: 为活动服务记录添加显式媒体数据**
 
-`ServiceRecord` 已增加可选 `media` 属性；待图片到位后，为 `community-events` 一次填写 `image.src`、`image.label`、`image.caption`。不为其他服务伪造媒体字段。
+`ServiceRecord` 已增加可选 `media` 属性；`community-events` 已配置 `image.src`、`image.label`、`image.caption`。不为其他服务伪造媒体字段。
 
 - [x] **Step 3: 用微信支持的图像角色呈现说明**
 
-详情页媒体区域在 `service.media.image` 存在时使用 `view aria-role="img" aria-label="{{service.media.image.label}}"` 作为单一图像节点，内部 `<image>` 标记 `aria-hidden="true"` 防止重复聚焦；旁边显示 `image.caption` 作为视觉说明。图片容器设置宽高比和 `mode="aspectFill"`，在大字/高对比模式下保留边框及图注。当前条件未满足，因此只显示待提供状态。
+详情页媒体区域在 `service.media.image` 存在时使用 `view aria-role="img" aria-label="{{service.media.image.label}}"` 作为单一图像节点，内部 `<image>` 标记 `aria-hidden="true"` 防止重复聚焦；旁边显示 `image.caption` 作为视觉说明。图片容器设置宽高比和 `mode="aspectFill"`，在大字/高对比模式下保留边框及图注。社区活动图片已配置，详情页显示真实图片。
 
-- [ ] **Step 4: 静态检查并提交图片演示**
+- [x] **Step 4: 静态检查并提交图片演示**
 
-素材到位后确认本地图片路径与 `ServiceRecord.media.image.src` 一致、图片节点只有一个可访问名称，再提交数据与图片文件；当前未执行。
+确认本地图片路径与 `ServiceRecord.media.image.src` 一致、图片节点只有一个可访问名称后，提交服务数据与同步更新的覆盖文档。图片文件由用户放置在工作区。
 
 ## Task 3: 接入视频播放器与文字等效内容
 
@@ -209,11 +209,11 @@ export interface ServiceMedia {
 
 - [ ] **Step 2a: 编译核验**
 
-本地 TypeScript 编译器可用时运行 `rtk pnpm exec tsc --noEmit`；若依赖未安装，不为本步骤安装依赖。微信开发者工具可操作时另行编译并记录结果。当前两种编译途径均不可用，本步骤保持未完成。
+本地 TypeScript 编译器不可用，未运行 `rtk pnpm exec tsc --noEmit`。微信开发者工具已热更新本次改动，服务详情中的图片成功显示，控制台没有 JavaScript 错误；但尚未单独执行“普通编译”，因此显式编译步骤保持未完成。
 
 - [ ] **Step 3: 在工具可操作时检查运行中的无障碍树**
 
-在微信开发者工具进入六个页面，核对焦点名称、角色、checked/invalid 状态、错误消息关系和筛选/提交动态反馈；播放/暂停视频，确认有可读文字稿。若工具控制仍不可用，明确记录环境阻塞，不把静态源码扫描写成运行时通过。
+本次通过集成 CUA 检查了首页、服务列表、社区活动详情和报名页。详情页运行时树显示带替代说明的图像、相邻图注和视频待提供状态；空表单提交后显示三条字段错误及汇总提示。设置与个人中心仅在初始树中看到，尚未检查其交互状态；报名成功状态、视频播放、VoiceOver / TalkBack 真机播报也未检查，因此本步骤保持未完成。此前 `hermes computer-use doctor` 报告 `cua-driver: not installed`，但这不影响本会话通过集成 CUA 查看开发者工具。
 
 - [x] **Step 4: 分项提交已完成内容**
 
@@ -226,7 +226,7 @@ export interface ServiceMedia {
 ## 实施与核验记录（2026-10-02）
 
 - Task 1 的既有页面语义代码见 `ded3854`、`f1742e8`；Task 4 的表单与校验修正见 `d6f4c63`、`b1343a7`；媒体结构见 `4dbae2a`、`d23a346`、`bfb48ea`。Task 2 的图像节点条件结构和 Task 3 的视频播放器条件结构已写入代码，但 Task 2 的素材生成、图片数据配置与图片交付、Task 3 的视频资料配置仍保持未完成。
-- `community-events.media` 当前是空对象。本地社区活动图片文件未提供，故 `image` 未配置；`video` 对象也不存在。详情页呈现“社区活动图片待提供”和“视频素材待提供”，不显示真实图片或播放器。图片和视频的内容验收不能据此勾选。
+- `community-events.media.image` 已指向 `miniprogram/assets/温馨多代同堂的社区活动空间.png`，并提供图像替代说明和可见图注；`video` 对象仍不存在，详情页显示“视频素材待提供”，不渲染播放器。视频内容验收仍需等待素材。
 - 六个业务页面 WXML 已逐页盘点：首页搜索输入及按钮、分类/推荐卡片与通知入口；服务搜索、类别单选、结果卡片及清除入口；详情返回、收藏、联系、报名入口及条件媒体；设置双开关；个人中心常用入口与收藏/浏览卡片；报名页五类字段、提交与无效链接返回。可见标签、原生 checked、标题、重复列表位置、错误 ID 关系和有限的 live 区域均按源码核对；实际焦点名称与播报仍需运行时复核。
 - `rtk git diff --check` 通过；`miniprogram/app.json` 和全部七个页面 JSON（含未注册的模板 logs 页）均可解析。工作区没有 `node_modules/.bin/tsc`，因此未运行 `rtk pnpm exec tsc --noEmit`，也未安装依赖。TypeScript 编译与微信开发者工具编译均未在本次核验中完成。
-- 此前执行的 `hermes computer-use doctor` 报告 `cua-driver: not installed`。本次未重复调用；当前无法完成开发者工具运行时无障碍树、图片/视频播放及 VoiceOver / TalkBack 真机播报核验，Task 5 Step 3 保持待完成。整体媒体与运行时目标仍未完成。
+- 本次集成 CUA 运行时检查确认详情图像节点、图注和报名页必填错误播报可见；开发者工具控制台未见 JavaScript 错误，另有基础库灰度和 `reportRealtimeAction:fail not support` 警告。设置/个人中心状态、报名成功、视频播放及 VoiceOver / TalkBack 真机播报未核验，Task 5 Step 3 保持待完成。整体视频与完整运行时目标仍未完成。

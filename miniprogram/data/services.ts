@@ -128,8 +128,14 @@ export const services: ServiceRecord[] = [
     steps: ['阅读活动时间与地点。', '确认参与条件。', '联系活动组织方完成报名。'],
     duration: '活动时长以活动公告为准。',
     contactDescription: '本 Demo 只展示活动报名说明，不记录报名信息。',
-    // 社区活动保留媒体槽位；图片素材到位后一次填齐路径、替代说明和图注。
-    media: {},
+    // 图片使用本地素材，并为读屏节点和可见图注分别提供说明。
+    media: {
+      image: {
+        src: '/assets/温馨多代同堂的社区活动空间.png',
+        label: '社区活动室内，多代居民一起做手工、阅读和轻度锻炼。',
+        caption: '共享活动空间可用于手工、阅读和轻度锻炼等社区活动。',
+      },
+    },
   },
   {
     id: 'culture-venue',

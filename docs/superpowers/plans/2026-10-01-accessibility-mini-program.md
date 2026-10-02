@@ -305,4 +305,4 @@ const visibleServices = services.filter((service) => {
 
 原计划要求所有控件添加 `aria-label`，后续按微信原生控件语义作了修正：输入和开关优先关联可见 `<label>`，原生按钮依赖可见文字，服务卡片的 `aria-label` 只补“打开详情”动作，单选/复选使用原生勾选状态。首页分类与推荐、服务结果、个人中心收藏与最近浏览改用列表包装节点及位置/总数属性；服务筛选结果、表单错误摘要和完成提示设置有限的动态播报。既有页面语义提交为 `ded3854`、`f1742e8`，表单及校验修正提交为 `d6f4c63`、`b1343a7`，媒体槽位与视频条件渲染结构提交为 `4dbae2a`、`d23a346`、`bfb48ea`。
 
-社区活动记录当前为 `media: {}`。本地图片文件尚未由用户提供，`image.src`、`image.label`、`image.caption` 均未配置；视频直链、播放器名称、简介和文字稿也未提供，`video` 对象不存在。详情页实际显示图片和视频的待提供文案，图片展示与视频播放仍待素材到位。`hermes computer-use doctor` 已报告 `cua-driver: not installed`，因此当前环境无法完成开发者工具运行时节点复核；VoiceOver / TalkBack 真机播报同样尚未验证。静态源码核对与 TypeScript 检查结果以 2026-10-02 计划的核验记录为准，不等同于上述运行时验收。
+社区活动记录已配置本地图片 `miniprogram/assets/温馨多代同堂的社区活动空间.png`，包含 `image.src`、`image.label` 和 `image.caption`；视频直链、播放器名称、简介和文字稿尚未提供，因此 `video` 对象不存在。详情页展示有替代说明和可见图注的图片，以及视频待提供文案。通过集成 CUA 已检查首页、服务列表、社区活动详情和报名页；设置/个人中心的交互状态、报名成功状态、视频播放及 VoiceOver / TalkBack 真机播报仍未验证。此前 `hermes computer-use doctor` 报告 `cua-driver: not installed`，但本会话使用的集成 CUA 可控制微信开发者工具。静态源码核对与 TypeScript 检查结果以 2026-10-02 计划的核验记录为准，不等同于上述运行时验收。
