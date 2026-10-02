@@ -50,7 +50,7 @@
 
     <view class="section-heading featured-heading">
       <text class="text-section-title" aria-role="header" aria-level="2">推荐服务</text>
-      <button class="text-link text-body" bindtap="onAllServicesTap">查看全部</button>
+      <button class="text-link text-body" bindtap="onAllServicesTap">查看全部服务</button>
     </view>
     <view class="featured-grid" aria-role="list">
       <block wx:for="{{featuredServices}}" wx:for-item="service" wx:key="id">

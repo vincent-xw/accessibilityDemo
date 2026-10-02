@@ -11,7 +11,7 @@
       <text class="text-body privacy-notice">仅演示校验，信息不会发送或保存</text>
     </view>
 
-    <form bindsubmit="onSubmit">
+    <form aria-label="社区活动报名表单" bindsubmit="onSubmit">
       <view class="form-field surface-card">
         <label id="contact-name-label" class="field-label text-body" for="contact-name">联系人称呼 <text class="required-mark">（必填）</text></label>
         <text id="contact-name-help" class="field-help text-caption text-muted">请输入方便活动组织方称呼您的名字。</text>
