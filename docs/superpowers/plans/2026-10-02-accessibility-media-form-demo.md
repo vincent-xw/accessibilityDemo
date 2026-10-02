@@ -205,7 +205,11 @@ export interface ServiceMedia {
 
 - [x] **Step 2: 静态验证源文件与配置**
 
-运行 `rtk git diff --check`；解析 `miniprogram/app.json` 和所有页面 JSON；用 `rtk rg -n 'aria-|bindtap|bindchange|bindinput|bindsubmit|<input|<picker|<radio|<checkbox|<switch|<video|<image' miniprogram` 逐项核对可操作节点与关系属性。尝试运行 `rtk pnpm exec tsc --noEmit`；若项目依赖未安装 TypeScript 编译器，不新增依赖，以微信开发者工具编译作为类型检查。此项是源码/编译核验，不代替读屏实测。
+运行 `rtk git diff --check`；解析 `miniprogram/app.json` 和所有页面 JSON；用 `rtk rg -n 'aria-|bindtap|bindchange|bindinput|bindsubmit|<input|<picker|<radio|<checkbox|<switch|<video|<image' miniprogram` 逐项核对可操作节点与关系属性。此项只记录源码与配置的静态核验，不代表编译或读屏实测通过。
+
+- [ ] **Step 2a: 编译核验**
+
+本地 TypeScript 编译器可用时运行 `rtk pnpm exec tsc --noEmit`；若依赖未安装，不为本步骤安装依赖。微信开发者工具可操作时另行编译并记录结果。当前两种编译途径均不可用，本步骤保持未完成。
 
 - [ ] **Step 3: 在工具可操作时检查运行中的无障碍树**
 
