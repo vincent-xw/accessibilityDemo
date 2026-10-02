@@ -1,0 +1,21 @@
+miniprogram/pages/detail/detail.wxml
+  s_536f5cc99fcfc2::t_e8f6d181f7aee2 34-54
+miniprogram/pages/detail/detail.wxss
+  s_536f5cc99fcfc2::t_88b9f5c7b93def 74-104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "d23a3463c030a18817632c701092aa08353d868b",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
