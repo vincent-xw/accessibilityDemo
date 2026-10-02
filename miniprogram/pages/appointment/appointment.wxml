@@ -1,0 +1,82 @@
+<view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
+  <view wx:if="{{!validService}}" class="status-page surface-card">
+    <text class="text-title" aria-role="header">报名链接无效</text>
+    <text class="text-body text-muted status-description">该链接未指向社区活动报名演示，请返回服务详情重新进入。</text>
+    <button class="button-primary" bindtap="onBackToServiceDetail">返回服务详情</button>
+  </view>
+
+  <scroll-view wx:else class="appointment-scroll" scroll-y type="list" aria-label="活动报名演示内容">
+    <view class="page-intro">
+      <text class="text-title" aria-role="header">社区活动报名演示</text>
+      <text class="text-body privacy-notice">仅演示校验，信息不会发送或保存</text>
+    </view>
+
+    <form bindsubmit="onSubmit">
+      <view class="form-field surface-card">
+        <label id="contact-name-label" class="field-label text-body" for="contact-name">联系人称呼 <text class="required-mark">（必填）</text></label>
+        <text id="contact-name-help" class="field-help text-caption text-muted">请输入方便活动组织方称呼您的名字。</text>
+        <input id="contact-name" class="field-control text-body" name="contactName" value="{{contactName}}" bindinput="onContactNameInput" aria-labelledby="contact-name-label" aria-required="true" aria-describedby="contact-name-help" aria-invalid="{{errors.contactName ? 'true' : 'false'}}" aria-errormessage="{{errors.contactName ? 'contact-name-error' : ''}}" />
+        <text wx:if="{{errors.contactName}}" id="contact-name-error" class="field-error text-caption">{{errors.contactName}}</text>
+      </view>
+
+      <view class="form-field surface-card">
+        <label id="activity-date-label" class="field-label text-body" for="activity-date">活动日期 <text class="required-mark">（必填）</text></label>
+        <text id="activity-date-help" class="field-help text-caption text-muted">请选择您计划参加活动的日期。</text>
+        <picker id="activity-date" class="date-picker" mode="date" value="{{activityDate}}" bindchange="onActivityDateChange" aria-labelledby="activity-date-label" aria-required="true" aria-describedby="activity-date-help" aria-invalid="{{errors.activityDate ? 'true' : 'false'}}" aria-errormessage="{{errors.activityDate ? 'activity-date-error' : ''}}">
+          <view class="field-control picker-display text-body">{{activityDate || '选择活动日期'}}</view>
+        </picker>
+        <text wx:if="{{errors.activityDate}}" id="activity-date-error" class="field-error text-caption">{{errors.activityDate}}</text>
+      </view>
+
+      <view class="form-field surface-card">
+        <label id="session-label" class="field-label text-body" for="session-group">活动场次 <text class="required-mark">（必填）</text></label>
+        <text id="session-help" class="field-help text-caption text-muted">请选择一个参加场次。</text>
+        <radio-group id="session-group" class="choice-group" name="session" bindchange="onSessionChange" aria-labelledby="session-label" aria-required="true" aria-describedby="session-help" aria-invalid="{{errors.session ? 'true' : 'false'}}" aria-errormessage="{{errors.session ? 'session-error' : ''}}">
+          <label class="choice-label text-body">
+            <radio value="morning" checked="{{session === 'morning'}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
+            <text>上午</text>
+          </label>
+          <label class="choice-label text-body">
+            <radio value="afternoon" checked="{{session === 'afternoon'}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
+            <text>下午</text>
+          </label>
+        </radio-group>
+        <text wx:if="{{errors.session}}" id="session-error" class="field-error text-caption">{{errors.session}}</text>
+      </view>
+
+      <view class="form-field surface-card">
+        <label id="needs-label" class="field-label text-body" for="needs-group">无障碍协助 <text class="optional-mark">（可选）</text></label>
+        <text id="needs-help" class="field-help text-caption text-muted">可多选需要的现场协助。</text>
+        <checkbox-group id="needs-group" class="choice-group" name="accessibilityNeeds" bindchange="onAccessibilityNeedsChange" aria-labelledby="needs-label" aria-describedby="needs-help">
+          <label class="choice-label text-body">
+            <checkbox value="step-free" checked="{{needsStepFree}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
+            <text>无台阶通道</text>
+          </label>
+          <label class="choice-label text-body">
+            <checkbox value="guide" checked="{{needsGuide}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
+            <text>现场引导</text>
+          </label>
+          <label class="choice-label text-body">
+            <checkbox value="large-print" checked="{{needsLargePrint}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
+            <text>大字资料</text>
+          </label>
+        </checkbox-group>
+      </view>
+
+      <view class="form-field surface-card">
+        <label id="notes-label" class="field-label text-body" for="notes">备注 <text class="optional-mark">（可选）</text></label>
+        <text id="notes-help" class="field-help text-caption text-muted">如有其他参加需求，可在这里填写。</text>
+        <textarea id="notes" class="field-control notes-control text-body" name="notes" value="{{notes}}" bindinput="onNotesInput" aria-labelledby="notes-label" aria-describedby="notes-help" />
+      </view>
+
+      <view wx:if="{{errorSummary}}" class="result-message error-summary" aria-live="polite" aria-atomic="true">
+        <text class="text-body">{{errorSummary}}</text>
+      </view>
+      <view wx:if="{{successAnnouncement}}" class="result-message success-summary" aria-live="polite" aria-atomic="true">
+        <text class="text-body">{{successAnnouncement}}</text>
+      </view>
+
+      <button class="button-primary submit-button" form-type="submit">完成报名演示</button>
+    </form>
+  </scroll-view>
+</view>

@@ -1,0 +1,171 @@
+.page-shell {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+.appointment-scroll {
+  flex: 1;
+  height: 0;
+  min-height: 0;
+  padding-bottom: 36rpx;
+}
+
+.page-intro {
+  padding: 8rpx 0 12rpx;
+}
+
+.privacy-notice {
+  display: block;
+  margin-top: 16rpx;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.field-label {
+  display: block;
+  font-weight: 700;
+}
+
+.required-mark,
+.optional-mark {
+  font-weight: 400;
+}
+
+.field-help {
+  display: block;
+  margin: 8rpx 0 16rpx;
+}
+
+.field-control {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 96rpx;
+  padding: 20rpx 24rpx;
+  border: 2rpx solid #59746e;
+  border-radius: 16rpx;
+  background-color: #ffffff;
+  color: #18332f;
+  line-height: 1.5;
+}
+
+.date-picker,
+.picker-display {
+  width: 100%;
+  min-height: 96rpx;
+}
+
+.picker-display {
+  display: flex;
+  align-items: center;
+}
+
+.choice-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.choice-label {
+  display: flex;
+  box-sizing: border-box;
+  min-height: 96rpx;
+  align-items: center;
+  gap: 18rpx;
+  padding: 12rpx 16rpx;
+  border: 2rpx solid #d9e4df;
+  border-radius: 16rpx;
+  overflow-wrap: anywhere;
+}
+
+.choice-label radio,
+.choice-label checkbox {
+  flex: none;
+}
+
+.notes-control {
+  min-height: 192rpx;
+}
+
+.field-error {
+  display: block;
+  margin-top: 14rpx;
+  color: #9b1c1c;
+  font-weight: 700;
+}
+
+.result-message {
+  box-sizing: border-box;
+  margin-top: 24rpx;
+  padding: 24rpx;
+  border: 2rpx solid #155c52;
+  border-radius: 16rpx;
+  background-color: #e4f0ec;
+}
+
+.error-summary {
+  border-color: #9b1c1c;
+  background-color: #fff4f2;
+  color: #731919;
+}
+
+.submit-button {
+  width: 100%;
+  margin: 28rpx 0 0;
+}
+
+.status-page {
+  display: flex;
+  min-height: 280rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+.status-description {
+  margin: 14rpx 0 24rpx;
+}
+
+.status-page .button-primary {
+  width: 100%;
+  margin: 0;
+}
+
+.page-shell--large .field-control,
+.page-shell--large .choice-label {
+  font-size: 38rpx;
+}
+
+.page-shell--large .field-control,
+.page-shell--large .choice-label,
+.page-shell--large .picker-display {
+  min-height: 112rpx;
+}
+
+.page-shell--large .notes-control {
+  min-height: 224rpx;
+}
+
+.page-shell--contrast .field-control,
+.page-shell--contrast .choice-label {
+  border: 3rpx solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.page-shell--contrast .field-error {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.page-shell--contrast .result-message {
+  border: 3rpx solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+}

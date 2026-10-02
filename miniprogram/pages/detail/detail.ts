@@ -90,6 +90,17 @@ Page({
     })
   },
 
+  /** 从社区活动详情进入本地报名演示，并保持服务 ID 与当前详情一致。 */
+  onAppointmentTap() {
+    // 入口只在社区活动详情显示；再次核对可避免无效详情发起导航。
+    const service = this.data.service
+    if (service?.id !== 'community-events') {
+      return
+    }
+
+    wx.navigateTo({ url: `/pages/appointment/appointment?serviceId=${service.id}` })
+  },
+
   /** 无效详情返回服务 Tab，并清除上次遗留的筛选条件。 */
   onBackToServices() {
     // 明确重置为完整列表，避免返回时继承过期筛选。

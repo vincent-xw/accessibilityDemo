@@ -60,5 +60,8 @@
     <view class="contact-panel">
       <button class="button-secondary contact-button" bindtap="onContactTap">查看联系说明</button>
     </view>
+    <view wx:if="{{service.id === 'community-events'}}" class="contact-panel">
+      <button class="button-primary contact-button" bindtap="onAppointmentTap">填写活动报名演示</button>
+    </view>
   </scroll-view>
 </view>

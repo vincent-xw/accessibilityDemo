@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/services/services",
     "pages/detail/detail",
+    "pages/appointment/appointment",
     "pages/settings/settings",
     "pages/profile/profile"
   ],
