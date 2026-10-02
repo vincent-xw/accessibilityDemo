@@ -54,7 +54,7 @@
     <view class="featured-grid" aria-role="list">
       <block wx:for="{{featuredServices}}" wx:for-item="service" wx:key="id">
         <view class="featured-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{featuredServiceCount}}">
-          <button class="service-card surface-card" aria-label="打开{{service.name}}详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+          <button class="service-card surface-card" aria-label="打开详情" data-service-id="{{service.id}}" bindtap="onOpenService">
             <text class="service-category text-caption">{{service.categoryName}}</text>
             <text class="service-name text-body">{{service.name}}</text>
             <text class="service-summary text-caption text-muted">{{service.summary}}</text>

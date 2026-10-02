@@ -41,7 +41,7 @@
           <view class="service-result-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{resultCount}}">
             <button
               class="service-result surface-card"
-              aria-label="打开{{service.name}}详情"
+              aria-label="打开详情"
               data-service-id="{{service.id}}"
               bindtap="onOpenService"
             >
