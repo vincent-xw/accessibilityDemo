@@ -7,6 +7,27 @@ export interface ServiceCategory {
   name: string
 }
 
+/** 图片路径、替代说明与图注必须作为一组配置。 */
+export interface ServiceImage {
+  src: string
+  label: string
+  caption: string
+}
+
+/** 视频地址与无障碍说明必须作为一组配置。 */
+export interface ServiceVideo {
+  src: string
+  label: string
+  summary: string
+  transcript: string
+}
+
+/** 服务媒体按实际提供的素材显式配置。 */
+export interface ServiceMedia {
+  image?: ServiceImage
+  video?: ServiceVideo
+}
+
 /** 服务详情页和服务卡片需要展示的完整字段。 */
 export interface ServiceRecord {
   id: string
@@ -18,6 +39,7 @@ export interface ServiceRecord {
   steps: string[]
   duration: string
   contactDescription: string
+  media?: ServiceMedia
 }
 
 /** 首页和筛选页共用的固定服务分类。 */
@@ -106,6 +128,8 @@ export const services: ServiceRecord[] = [
     steps: ['阅读活动时间与地点。', '确认参与条件。', '联系活动组织方完成报名。'],
     duration: '活动时长以活动公告为准。',
     contactDescription: '本 Demo 只展示活动报名说明，不记录报名信息。',
+    // 社区活动保留媒体槽位；图片素材到位后一次填齐路径、替代说明和图注。
+    media: {},
   },
   {
     id: 'culture-venue',

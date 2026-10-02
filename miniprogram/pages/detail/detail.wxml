@@ -21,6 +21,16 @@
       <text class="text-body text-muted">{{service.duration}}</text>
     </view>
 
+    <view wx:if="{{service.media}}" class="detail-media surface-card">
+      <text class="text-section-title" aria-role="header">活动图片</text>
+      <view wx:if="{{service.media.image}}" class="detail-media-frame" aria-role="img" aria-label="{{service.media.image.label}}">
+        <image class="detail-media-image" src="{{service.media.image.src}}" mode="aspectFill" aria-hidden="true" />
+      </view>
+      <view wx:else class="detail-media-frame detail-media-placeholder" aria-hidden="true"></view>
+      <text wx:if="{{service.media.image}}" class="detail-media-caption text-body">{{service.media.image.caption}}</text>
+      <text wx:else class="detail-media-caption text-body">社区活动图片待提供</text>
+    </view>
+
     <view class="detail-section surface-card">
       <text class="text-section-title" aria-role="header">办理条件</text>
       <view class="detail-list" aria-role="list">
