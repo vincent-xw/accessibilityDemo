@@ -99,6 +99,10 @@
 
 .detail-video-transcript {
   margin-top: 10rpx;
+}
+
+.detail-video-transcript-copy {
+  display: block;
   white-space: pre-line;
 }
 

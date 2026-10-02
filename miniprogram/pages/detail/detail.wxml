@@ -32,8 +32,8 @@
     </view>
 
     <view wx:if="{{service.media}}" class="detail-video-section surface-card">
-      <!-- 仅在视频地址及无障碍文字作为完整对象提供后创建播放器。 -->
-      <block wx:if="{{service.media.video}}">
+      <!-- 视频地址、名称、简介和文字稿都齐全时才创建播放器。 -->
+      <block wx:if="{{service.media.video && service.media.video.src && service.media.video.label && service.media.video.summary && service.media.video.transcript}}">
         <video
           class="detail-video-player"
           src="{{service.media.video.src}}"
@@ -44,11 +44,15 @@
         <text class="text-section-title detail-video-title" aria-role="header">活动视频</text>
         <text id="service-video-summary" class="detail-video-copy text-body">{{service.media.video.summary}}</text>
         <text class="detail-video-transcript-title text-body">视频文字稿</text>
-        <view id="service-video-transcript" class="detail-video-transcript text-body">{{service.media.video.transcript}}</view>
+        <view id="service-video-transcript" class="detail-video-transcript" aria-role="list">
+          <view aria-role="listitem">
+            <text class="detail-video-transcript-copy text-body">{{service.media.video.transcript}}</text>
+          </view>
+        </view>
       </block>
       <block wx:else>
         <text class="text-section-title" aria-role="header">视频素材待提供</text>
-        <text class="detail-video-copy text-body">提供可直接播放的视频链接、视频简介和文字稿后，这里会显示视频播放器及可阅读的文字内容。</text>
+        <text class="detail-video-copy text-body">提供可直接播放的视频链接、播放器名称、视频简介和文字稿后，这里会显示视频播放器及可阅读的文字内容。</text>
       </block>
     </view>
 
