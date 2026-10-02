@@ -1,0 +1,33 @@
+miniprogram/pages/detail/detail.ts
+  s_536f5cc99fcfc2::t_5abdd0c18baa6f 93-103
+miniprogram/pages/detail/detail.wxml
+  s_536f5cc99fcfc2::t_5abdd0c18baa6f 63-65
+miniprogram/pages/appointment/appointment.json
+  s_536f5cc99fcfc2::t_5abdd0c18baa6f 1-4
+miniprogram/pages/appointment/appointment.wxml
+  s_536f5cc99fcfc2::t_b02261f291bf22 1-51,53-55,57-59,61-82
+  s_536f5cc99fcfc2::t_9d6be098cf432d 52,56,60
+miniprogram/app.json
+  s_536f5cc99fcfc2::t_5abdd0c18baa6f 6
+miniprogram/pages/appointment/appointment.ts
+  s_536f5cc99fcfc2::t_9d6be098cf432d 15-17,58-65
+  s_536f5cc99fcfc2::t_5abdd0c18baa6f 1-14,18-57,66-109
+miniprogram/pages/appointment/appointment.wxss
+  s_536f5cc99fcfc2::t_b02261f291bf22 1-171
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "d6f4c637a80aa33f583967b10ad581bdd4d7fb0a",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
