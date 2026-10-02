@@ -16,6 +16,8 @@ Page({
   data: {
     favoriteServices: [] as ServiceRecord[],
     recentServices: [] as ServiceRecord[],
+    favoriteCount: 0,
+    recentServiceCount: 0,
     hasFavorites: false,
     hasRecentServices: false,
     largeText: false,
@@ -32,6 +34,8 @@ Page({
     this.setData({
       favoriteServices,
       recentServices,
+      favoriteCount: favoriteServices.length,
+      recentServiceCount: recentServices.length,
       hasFavorites: favoriteServices.length > 0,
       hasRecentServices: recentServices.length > 0,
       largeText: preferences.largeText,

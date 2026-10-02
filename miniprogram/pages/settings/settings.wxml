@@ -9,12 +9,12 @@
       <label class="setting-row" for="large-text-switch">
         <view class="setting-copy">
           <text class="setting-title text-body">大字模式</text>
-          <text class="setting-description text-caption text-muted">放大页面文字，内容可以换行显示。</text>
+          <text id="large-text-description" class="setting-description text-caption text-muted">放大页面文字，内容可以换行显示。</text>
           <text class="setting-status text-caption text-muted">{{largeText ? '已开启' : '未开启'}}</text>
         </view>
         <switch
           id="large-text-switch"
-          aria-label="大字模式"
+          aria-describedby="large-text-description"
           checked="{{largeText}}"
           data-key="largeText"
           color="{{highContrast ? '#000000' : '#125c51'}}"
@@ -27,12 +27,12 @@
       <label class="setting-row" for="high-contrast-switch">
         <view class="setting-copy">
           <text class="setting-title text-body">高对比模式</text>
-          <text class="setting-description text-caption text-muted">使用更清楚的文字和背景对比。</text>
+          <text id="high-contrast-description" class="setting-description text-caption text-muted">使用更清楚的文字和背景对比。</text>
           <text class="setting-status text-caption text-muted">{{highContrast ? '已开启' : '未开启'}}</text>
         </view>
         <switch
           id="high-contrast-switch"
-          aria-label="高对比模式"
+          aria-describedby="high-contrast-description"
           checked="{{highContrast}}"
           data-key="highContrast"
           color="{{highContrast ? '#000000' : '#125c51'}}"

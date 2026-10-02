@@ -14,63 +14,57 @@
     </view>
 
     <view class="search-panel surface-card">
-      <text class="search-label text-body">搜索服务</text>
+      <label class="search-label text-body" for="home-service-search">搜索服务</label>
       <input
+        id="home-service-search"
         class="search-input"
         type="text"
         value="{{keyword}}"
         placeholder="输入服务名称或关键词"
         placeholder-class="search-placeholder"
         confirm-type="search"
-        aria-label="输入服务名称或关键词搜索服务"
+        aria-describedby="home-search-help"
         bindinput="onSearchInput"
         bindconfirm="onSearchTap"
       />
-      <button class="button-primary search-button" aria-label="搜索服务并查看匹配结果" bindtap="onSearchTap">搜索服务</button>
+      <text id="home-search-help" class="text-caption text-muted">输入服务名称或关键词</text>
+      <button class="button-primary search-button" bindtap="onSearchTap">搜索服务</button>
     </view>
 
     <view class="section-heading">
       <text class="text-section-title" aria-role="header">服务分类</text>
       <text class="text-caption text-muted">选择分类查看相关服务</text>
     </view>
-    <view class="category-grid">
-      <button
-        wx:for="{{serviceCategories}}"
-        wx:for-item="category"
-        wx:key="id"
-        class="category-card category-card--{{category.id}}"
-        aria-label="查看{{category.name}}分类服务"
-        data-category-id="{{category.id}}"
-        bindtap="onCategoryTap"
-      >
-        <view class="category-mark" aria-hidden="true"></view>
-        <text class="category-name text-body">{{category.name}}</text>
-        <text class="category-action text-caption">查看服务</text>
-      </button>
+    <view class="category-grid" aria-role="list">
+      <block wx:for="{{serviceCategories}}" wx:for-item="category" wx:key="id">
+        <view class="category-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{categoryCount}}">
+          <button class="category-card category-card--{{category.id}}" data-category-id="{{category.id}}" bindtap="onCategoryTap">
+            <view class="category-mark" aria-hidden="true"></view>
+            <text class="category-name text-body">{{category.name}}</text>
+            <text class="category-action text-caption">查看服务</text>
+          </button>
+        </view>
+      </block>
     </view>
 
     <view class="section-heading featured-heading">
       <text class="text-section-title" aria-role="header">推荐服务</text>
-      <button class="text-link text-body" aria-label="查看全部生活服务" bindtap="onAllServicesTap">查看全部</button>
+      <button class="text-link text-body" bindtap="onAllServicesTap">查看全部</button>
     </view>
-    <view class="featured-grid">
-      <button
-        wx:for="{{featuredServices}}"
-        wx:for-item="service"
-        wx:key="id"
-        class="service-card surface-card"
-        aria-label="查看{{service.name}}详情，类别：{{service.categoryName}}，简介：{{service.summary}}"
-        data-service-id="{{service.id}}"
-        bindtap="onOpenService"
-      >
-        <text class="service-category text-caption">{{service.categoryName}}</text>
-        <text class="service-name text-body">{{service.name}}</text>
-        <text class="service-summary text-caption text-muted">{{service.summary}}</text>
-      </button>
+    <view class="featured-grid" aria-role="list">
+      <block wx:for="{{featuredServices}}" wx:for-item="service" wx:key="id">
+        <view class="featured-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{featuredServiceCount}}">
+          <button class="service-card surface-card" aria-label="打开{{service.name}}详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+            <text class="service-category text-caption">{{service.categoryName}}</text>
+            <text class="service-name text-body">{{service.name}}</text>
+            <text class="service-summary text-caption text-muted">{{service.summary}}</text>
+          </button>
+        </view>
+      </block>
     </view>
 
     <view class="notice-wrap">
-      <button class="button-secondary notice-button" aria-label="阅读服务信息说明，了解示例内容范围" bindtap="onNoticeTap">
+      <button class="button-secondary notice-button" bindtap="onNoticeTap">
         <text class="notice-title text-body">服务信息说明</text>
         <text class="notice-description text-caption">了解 Demo 内容与办理信息的使用范围</text>
       </button>

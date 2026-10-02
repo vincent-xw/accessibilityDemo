@@ -10,6 +10,8 @@ Page({
     keyword: '',
     serviceCategories,
     featuredServices,
+    categoryCount: serviceCategories.length,
+    featuredServiceCount: featuredServices.length,
     largeText: false,
     highContrast: false,
   },
