@@ -76,7 +76,7 @@
 本 Demo 以微信官方[无障碍访问文档](https://developers.weixin.qq.com/miniprogram/dev/component/aria-component.html)为属性依据。文档说明基础库自 2.7.1 起支持部分 ARIA 属性；`aria-label` 是焦点时附加播报，不等同于可见标签；不同系统对 `aria-role` 播报存在差异。实现中只在确有语义需要的节点添加属性，不把整套属性机械贴到每个节点，也不覆盖原生控件已有的名称、角色和状态。
 
 - 优先使用原生 `button`、`input`、`switch`、`checkbox`、`radio-group`、`picker` 和 `form`，确保可见文字标签与输入项对应；占位提示只补充格式或示例，不代替标签。
-- 服务卡片等需要动作和对象上下文的控件提供明确附加说明；通用按钮优先使用可见文本。原生标签已完整时不重复朗读相同文案。
+- 服务卡片用可见子文本呈现服务名、分类和简介；`aria-label` 仅补充“打开详情”这一操作提示，不重复复制可见卡片文案。通用按钮优先使用可见文本。
 - 非原生可交互节点使用合适的 `aria-role`、`aria-label` 或 `aria-labelledby`；不把原生控件角色改写成不相容的角色。
 - 用 `aria-describedby` 关联输入说明，用 `aria-required`、`aria-invalid`、`aria-errormessage` 表达表单必填和错误状态；错误文本须始终可见，不能只由颜色标记。
 - 用 `aria-live`、`aria-atomic` 在动态筛选结果、表单错误摘要和提交反馈处提供有节制的读屏更新；不将整页或每条静态说明设为 live region。
@@ -87,7 +87,7 @@
 
 | 语义目的 | 文档属性/原生语义 | Demo 使用位置 |
 | --- | --- | --- |
-| 名称、描述与关系 | 可见 `<label>`、原生按钮文字、`aria-label`、`aria-labelledby`、`aria-describedby`、`aria-errormessage` | 输入字段、服务卡片、图片、表单错误 |
+| 名称、描述与关系 | 可见 `<label>`、原生按钮文字、`aria-label`、`aria-labelledby`、`aria-describedby`、`aria-errormessage` | 输入字段、服务卡片动作提示、图片、表单错误 |
 | 角色与结构 | 原生组件角色；需要时 `aria-role`、`aria-level`、`aria-posinset`、`aria-setsize` | 标题、列表、列表项、示意图片、自绘控件 |
 | 控件状态 | 原生 `checked`/`disabled` 等；自绘状态才使用 `aria-checked`、`aria-disabled`、`aria-expanded`、`aria-pressed` | 收藏、分类筛选、设置开关和表单状态 |
 | 表单约束 | `aria-required`、`aria-invalid`、`aria-errormessage` | 必填字段和校验失败字段 |
