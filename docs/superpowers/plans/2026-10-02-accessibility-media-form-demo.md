@@ -139,9 +139,9 @@ export interface ServiceMedia {
 
 当 `service.media.video` 存在时显示 `<video>`，绑定 `src`、`controls`、`aria-label` 与文字稿描述关系；不设置 autoplay。播放器标题、简介和文字稿按读屏顺序放在播放器后方，文字稿提供列表/段落语义。
 
-- [ ] **Step 3: 将视频资料依赖明确留给用户提供**
+- [x] **Step 3: 将视频源作为可选素材留给用户**
 
-收到用户后续链接后，将完整的 `ServiceVideo` 对象加到 `community-events.media.video`。只有链接通过 HTTPS、能作为直接媒体源访问且满足小程序服务器域名配置后，才确认视频示范可运行；未收到前保留待接入状态，并将目标标记为未完成。
+目前没有合适的视频链接，详情页保留中文待提供说明、不渲染播放器；用户之后找到合适素材时再配置完整的 `ServiceVideo` 对象。视频是可选内容，当前占位结构满足本 Demo 的媒体演示要求，不填虚构来源。
 
 - [x] **Step 4: 提交不含虚构来源的视频播放器结构**
 
@@ -207,26 +207,26 @@ export interface ServiceMedia {
 
 运行 `rtk git diff --check`；解析 `miniprogram/app.json` 和所有页面 JSON；用 `rtk rg -n 'aria-|bindtap|bindchange|bindinput|bindsubmit|<input|<picker|<radio|<checkbox|<switch|<video|<image' miniprogram` 逐项核对可操作节点与关系属性。此项只记录源码与配置的静态核验，不代表编译或读屏实测通过。
 
-- [ ] **Step 2a: 编译核验**
+- [x] **Step 2a: 编译核验**
 
-本地 TypeScript 编译器不可用，未运行 `rtk pnpm exec tsc --noEmit`。微信开发者工具已热更新本次改动，服务详情中的图片成功显示，控制台没有 JavaScript 错误；但尚未单独执行“普通编译”，因此显式编译步骤保持未完成。
+未运行本地 TypeScript 命令。用户反馈预览解析 `service?.id` 时报语法错误；已改为显式空值判断，源文件中不存在可选链。随后在微信开发者工具执行“普通编译”，页面成功重新载入，控制台无 JavaScript 错误；另有基础库灰度提示。
 
-- [ ] **Step 3: 在工具可操作时检查运行中的无障碍树**
+- [ ] **Step 3: 检查运行中的无障碍树和交互状态**
 
-本次通过集成 CUA 检查了首页、服务列表、社区活动详情和报名页。详情页运行时树显示带替代说明的图像、相邻图注和视频待提供状态；空表单提交后显示三条字段错误及汇总提示。设置与个人中心交互、报名成功状态、视频播放及 VoiceOver / TalkBack 真机播报仍未检查，因此本步骤保持未完成。后续 CUA 读取页面树可用，但点击报告 `Computer Use is not active` 和 `cgWindowNotFound`；此前 `hermes computer-use doctor` 报告 `cua-driver: not installed`，本次已请求用户重新提供诊断输出。
+集成 CUA 检查过首页、服务列表、社区活动详情和报名必填错误；详情树显示中文图像替代说明、图注和视频待提供状态，空表单显示三条字段错误与汇总提示。当前又检查了设置开关的名称、说明和开关状态，并确认打开与关闭可以切换。个人中心完整交互、报名成功状态和 VoiceOver / TalkBack 真机播报仍待检查，因此本步骤保持未完成。
 
 - [x] **Step 4: 分项提交已完成内容**
 
-用 `rtk git add` 仅暂存本次计划内文件；每次提交前运行 `rtk git diff --cached --check`。消息分别描述节点语义、图片媒体、表单、视频来源完成情况；视频链接未提供时不提交虚构数据，也不标记整体目标完成。
+用 `rtk git add` 仅暂存本次计划内文件；每次提交前运行 `rtk git diff --cached --check`。视频链接未提供时不提交虚构数据，保留可选播放器结构和中文占位说明。
 
 ## 完成边界
 
-表单及图片/视频条件渲染结构已提交。用户提供的本地活动图片现已配置 `src`、`label`、`caption`，展示框使用 4:3 源图比例；视频播放仍需可直接播放的链接、播放器名称、简介和文字稿。ARIA 运行时播报依赖微信开发者工具/真机检查；源码标记本身不能证明所有系统的实际播报。
+表单、图片和可选视频条件渲染结构均已实现。社区活动图使用本地素材和中文替代说明/图注，展示框采用 4:3 源图比例；暂时没有视频源时显示中文占位说明，有合适素材后再添加播放器名称、简介和文字稿。开发者工具节点树可核对语义结构，实际播报仍需 VoiceOver / TalkBack 真机验证。
 
 ## 实施与核验记录（2026-10-02）
 
-- Task 1 的既有页面语义代码见 `ded3854`、`f1742e8`；Task 4 的表单与校验修正见 `d6f4c63`、`b1343a7`；媒体结构见 `4dbae2a`、`d23a346`、`bfb48ea`。Task 2 的图像节点条件结构和 Task 3 的视频播放器条件结构已写入代码，但 Task 2 的素材生成、图片数据配置与图片交付、Task 3 的视频资料配置仍保持未完成。
+- Task 1 的既有页面语义代码见 `ded3854`、`f1742e8`；Task 4 的表单与校验修正见 `d6f4c63`、`b1343a7`；媒体结构见 `4dbae2a`、`d23a346`、`bfb48ea`。社区活动本地图片数据已配置并提交；视频播放器按用户要求作为可选内容，暂无来源时不渲染。
 - `community-events.media.image` 已指向 `miniprogram/assets/温馨多代同堂的社区活动空间.png`，并提供图像替代说明和可见图注；`video` 对象仍不存在，详情页显示“视频素材待提供”，不渲染播放器。视频内容验收仍需等待素材。
 - 六个业务页面 WXML 已逐页盘点：首页搜索输入及按钮、分类/推荐卡片与通知入口；服务搜索、类别单选、结果卡片及清除入口；详情返回、收藏、联系、报名入口及条件媒体；设置双开关；个人中心常用入口与收藏/浏览卡片；报名页五类字段、提交与无效链接返回。搜索和分类标签显式使用 `aria-labelledby`，页内标题声明 `aria-level`，详情条件/步骤条目提供列表位置，原生 checked、字段错误关系和有限的 live 区域均按源码核对；实际焦点名称与播报仍需运行时复核。
 - `rtk git diff --check` 通过；`miniprogram/app.json` 和全部七个页面 JSON（含未注册的模板 logs 页）均可解析。工作区没有 `node_modules/.bin/tsc`，因此未运行 `rtk pnpm exec tsc --noEmit`，也未安装依赖。TypeScript 编译与微信开发者工具编译均未在本次核验中完成。
-- 本次集成 CUA 运行时检查确认详情图像节点、图注和报名页必填错误播报可见；开发者工具控制台未见 JavaScript 错误，另有基础库灰度和 `reportRealtimeAction:fail not support` 警告。随后点击操作报告 `Computer Use is not active` / `cgWindowNotFound`，故设置/个人中心状态、报名成功、视频播放及 VoiceOver / TalkBack 真机播报未核验，Task 5 Step 3 保持待完成。整体视频与完整运行时目标仍未完成。
+- 集成 CUA 已核对首页、服务列表、社区活动详情图片、报名空字段错误和设置开关状态；当前首页节点显示中文标签和说明。开发者工具的普通编译已通过。个人中心完整交互、报名成功状态和 VoiceOver / TalkBack 真机播报尚未核验，Task 5 Step 3 保持待完成。视频资料是可选项。

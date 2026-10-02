@@ -1,5 +1,5 @@
 <view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
-  <view wx:if="{{loading}}" class="status-page">
+  <view wx:if="{{loading}}" class="status-page" aria-live="polite" aria-atomic="true">
     <text class="text-body">正在读取服务信息</text>
   </view>
 

@@ -50,7 +50,7 @@ export const serviceCategories: ServiceCategory[] = [
   { id: 'culture', name: '文化休闲' },
 ]
 
-/** Demo 展示数据；详情页直接使用这些完整记录，不补造缺失字段。 */
+/** 服务演示数据；详情页直接使用这些完整记录，不补造缺失字段。 */
 export const services: ServiceRecord[] = [
   {
     id: 'social-card',
@@ -61,7 +61,7 @@ export const services: ServiceRecord[] = [
     requirements: ['办理前请准备本人有效身份证件。', '未成年人需由监护人陪同办理。'],
     steps: ['选择申领或补换服务。', '核对所需材料和办理地点。', '按页面提示完成线下办理。'],
     duration: '现场办理时间以服务网点公告为准。',
-    contactDescription: '本 Demo 仅展示办理信息，不连接真实社保服务。',
+    contactDescription: '本演示仅展示办理信息，不连接真实社保服务。',
   },
   {
     id: 'residence-permit',
@@ -72,7 +72,7 @@ export const services: ServiceRecord[] = [
     requirements: ['准备有效身份证件。', '其他材料以办理地要求为准。'],
     steps: ['阅读办理条件。', '准备材料并选择服务网点。', '到网点提交申请。'],
     duration: '办理时限以服务网点公告为准。',
-    contactDescription: '本 Demo 仅作办事流程示例，不提交真实申请。',
+    contactDescription: '本演示仅作办事流程示例，不提交真实申请。',
   },
   {
     id: 'utility-bill',
@@ -83,7 +83,7 @@ export const services: ServiceRecord[] = [
     requirements: ['准备账单上的用户编号。', '核对账单所属地址。'],
     steps: ['选择水费或电费。', '输入账单用户编号。', '核对账单周期和金额。'],
     duration: '查询结果即时显示。',
-    contactDescription: '本 Demo 不连接缴费平台，不会收集账户信息。',
+    contactDescription: '本演示不连接缴费平台，不会收集账户信息。',
   },
   {
     id: 'senior-meal',
@@ -94,7 +94,7 @@ export const services: ServiceRecord[] = [
     requirements: ['选择所在社区。', '具体服务对象以助餐点公告为准。'],
     steps: ['选择社区。', '查看助餐点开放时间。', '按页面所示方式前往咨询。'],
     duration: '开放时间以助餐点公告为准。',
-    contactDescription: '本 Demo 使用示例说明，不代表真实助餐点信息。',
+    contactDescription: '本演示使用示例说明，不代表真实助餐点信息。',
   },
   {
     id: 'parking-reservation',
@@ -105,7 +105,7 @@ export const services: ServiceRecord[] = [
     requirements: ['准备车辆信息。', '预约规则以社区公告为准。'],
     steps: ['选择到访日期。', '阅读停车说明。', '向社区服务台确认车位。'],
     duration: '预约确认以社区服务台为准。',
-    contactDescription: '本 Demo 不提交停车预约，也不连接停车场系统。',
+    contactDescription: '本演示不提交停车预约，也不连接停车场系统。',
   },
   {
     id: 'bus-guide',
@@ -116,7 +116,7 @@ export const services: ServiceRecord[] = [
     requirements: ['出行前请核对当日线路信息。'],
     steps: ['查询起点和目的地。', '确认线路与换乘站。', '预留步行和候车时间。'],
     duration: '行程时间以实时交通情况为准。',
-    contactDescription: '本 Demo 不接入实时公交数据。',
+    contactDescription: '本演示不接入实时公交数据。',
   },
   {
     id: 'community-events',
@@ -127,7 +127,7 @@ export const services: ServiceRecord[] = [
     requirements: ['活动名额和参与条件以活动公告为准。'],
     steps: ['阅读活动时间与地点。', '确认参与条件。', '联系活动组织方完成报名。'],
     duration: '活动时长以活动公告为准。',
-    contactDescription: '本 Demo 只展示活动报名说明，不记录报名信息。',
+    contactDescription: '本演示只展示活动报名说明，不记录报名信息。',
     // 图片使用本地素材，并为读屏节点和可见图注分别提供说明。
     media: {
       image: {
@@ -146,6 +146,6 @@ export const services: ServiceRecord[] = [
     requirements: ['预约规则以场馆公告为准。', '入馆时请遵守现场指引。'],
     steps: ['选择目标场馆。', '查看开放日期和入馆须知。', '通过场馆官方渠道完成预约。'],
     duration: '开放时间以场馆公告为准。',
-    contactDescription: '本 Demo 不连接场馆预约系统。',
+    contactDescription: '本演示不连接场馆预约系统。',
   },
 ]

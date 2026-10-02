@@ -76,11 +76,11 @@ Page({
     wx.navigateTo({ url: `/pages/detail/detail?id=${encodeURIComponent(serviceId)}` })
   },
 
-  /** 用文字弹窗说明 Demo 服务信息范围，不发起外部请求。 */
+  /** 用文字弹窗说明演示服务信息范围，不发起外部请求。 */
   onNoticeTap() {
     wx.showModal({
       title: '服务信息说明',
-      content: '本页面展示的是生活服务 Demo 示例内容，办理要求请以服务提供方发布的信息为准。',
+      content: '本页面展示的是生活服务演示内容，办理要求请以服务提供方发布的信息为准。',
       showCancel: false,
       confirmText: '我知道了',
     })

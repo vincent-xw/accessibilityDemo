@@ -8,7 +8,7 @@ import {
 
 /** 按本地 ID 顺序映射共享服务记录，保持最近浏览的时间顺序。 */
 function mapServiceIds(ids: string[]): ServiceRecord[] {
-  // 收藏和浏览记录只由本 Demo 的有效服务入口写入。
+  // 收藏和浏览记录只由本演示的有效服务入口写入。
   return ids.map((id) => services.find((service) => service.id === id) as ServiceRecord)
 }
 

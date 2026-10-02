@@ -94,7 +94,7 @@ Page({
   onAppointmentTap() {
     // 入口只在社区活动详情显示；再次核对可避免无效详情发起导航。
     const service = this.data.service
-    if (service?.id !== 'community-events') {
+    if (!service || service.id !== 'community-events') {
       return
     }
 

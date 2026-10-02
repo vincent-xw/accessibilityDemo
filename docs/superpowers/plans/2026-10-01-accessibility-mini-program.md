@@ -253,7 +253,7 @@ const visibleServices = services.filter((service) => {
 
 - [x] **Step 1: 从共享数据组装个人中心内容**
 
-在 `onShow` 把收藏 ID、最近浏览 ID 映射到服务记录；示例身份文字固定标注“Demo 用户”。
+在 `onShow` 把收藏 ID、最近浏览 ID 映射到服务记录；示例身份文字固定标注“示例用户”。
 
 - [x] **Step 2: 实现分组入口和空状态**
 
@@ -261,7 +261,7 @@ const visibleServices = services.filter((service) => {
 
 - [x] **Step 3: 检查读屏顺序和主题状态**
 
-根节点读取无障碍设置并绑定主题类；所有头像/装饰图若存在均隐藏为装饰节点，身份以文本表达。用 `rtk rg -n "Demo 用户|收藏|最近浏览|button|aria-hidden|page-shell--" miniprogram/pages/profile/profile.*` 检查页面分组。
+根节点读取无障碍设置并绑定主题类；所有头像/装饰图若存在均隐藏为装饰节点，身份以文本表达。用 `rtk rg -n "示例用户|收藏|最近浏览|button|aria-hidden|page-shell--" miniprogram/pages/profile/profile.*` 检查页面分组。
 
 ## Task 8: 集成检查与交付前检查
 
@@ -281,7 +281,7 @@ const visibleServices = services.filter((service) => {
 
 - [x] **Step 1: 检查无障碍节点与页面配置**
 
-运行 `rtk rg -n "bindtap|bindchange|<input|<switch|<checkbox|<radio|aria-|type=\"list\"" miniprogram/pages`。逐个检查每个交互控件都有明确 `aria-label`，选择控件能读出状态；检查装饰图片是否隐藏、每个滚动区域是否有列表语义。
+运行 `rtk rg -n "bindtap|bindchange|<input|<switch|<checkbox|<radio|aria-|type=\"list\"" miniprogram/pages`。逐个检查交互控件是否有可见名称或合适的 ARIA 关联，选择控件是否保留原生状态；检查装饰图片是否隐藏、滚动区域和重复内容是否有列表语义。
 
 - [x] **Step 2: 检查代码格式和数据完整性**
 
@@ -295,7 +295,7 @@ const visibleServices = services.filter((service) => {
 
 在开发者工具中检查节点树的可见名称、顺序和状态；对尚未连接的 iOS VoiceOver / Android TalkBack 只记录为待真机验证，不宣称已完成实际播报验证。
 
-> **集成走查记录（2026-10-02）：** 曾在微信开发者工具查看首页、服务列表和设置页的部分节点；后续逐页核对发现卡片按钮及原生筛选控件虽有可读文字，但缺少显式 `aria-label`。现已给所有页面交互控件补齐名称，并通过源码静态扫描确认 21 个原生交互节点都有 `aria-label`。修改后的开发者工具节点树、完整交互流、详情页与个人中心节点树，以及大字/高对比跨 Tab 持久化走查尚未复核。运行 `hermes computer-use doctor` 后报告 `cua-driver: not installed`；iOS VoiceOver / Android TalkBack 真机播报也仍待验证。
+> **集成走查记录（2026-10-02）：** 页面名称采用可见文本、原生 `<label>`、`aria-labelledby` 或必要的中文 `aria-label`；不要求每个控件重复增加 `aria-label`。列表位置、标题层级、筛选状态、字段说明与错误关系以及媒体替代文本按实际结构配置。微信开发者工具节点树已查看首页、服务列表、社区活动详情、报名必填错误和设置开关状态；个人中心完整交互、报名成功状态及 VoiceOver / TalkBack 真机播报仍待用户工具检查。
 
 > **视觉修正记录（2026-10-02）：** 原生 TabBar 已增加四组常态和选中态图标，同时保留文字名称。首页分类、首页推荐、服务结果、个人中心收藏和最近浏览卡片均由按钮节点自身循环输出，并明确指定横向 Flex、48% 不收缩基准宽度和左右零外边距。待开发者工具可操作时复核最终双列效果。
 
@@ -303,6 +303,6 @@ const visibleServices = services.filter((service) => {
 
 本节记录原计划之后的变更；上方任务步骤保留当时的实施记录。新增 `pages/appointment/appointment` 普通路由，由社区活动详情的“填写活动报名演示”按钮进入，不占用 TabBar。报名字段、必填校验、字段错误、错误摘要和完成提示仅存在页面内存；不采集手机号，不发送或持久化表单输入。
 
-原计划要求所有控件添加 `aria-label`，后续按微信原生控件语义作了修正：输入和开关优先关联可见 `<label>`，原生按钮依赖可见文字，服务卡片的 `aria-label` 只补“打开详情”动作，单选/复选使用原生勾选状态。首页分类与推荐、服务结果、个人中心收藏与最近浏览改用列表包装节点及位置/总数属性；服务筛选结果、表单错误摘要和完成提示设置有限的动态播报。既有页面语义提交为 `ded3854`、`f1742e8`，表单及校验修正提交为 `d6f4c63`、`b1343a7`，媒体槽位与视频条件渲染结构提交为 `4dbae2a`、`d23a346`、`bfb48ea`。
+原计划要求所有控件添加 `aria-label`，后续按微信原生控件语义作了修正：输入和开关关联可见 `<label>`，原生按钮依赖可见文字，服务卡片的 `aria-label` 只补“打开详情”动作，单选/复选保留原生选中状态。首页分类与推荐、服务结果、个人中心收藏与最近浏览使用列表包装节点及位置/总数属性；服务筛选结果、表单错误摘要和完成提示使用有限动态播报。所有读屏可感知的名称、说明、状态和错误文案均为简体中文。既有页面语义提交为 `ded3854`、`f1742e8`，表单及校验修正提交为 `d6f4c63`、`b1343a7`，媒体槽位与视频条件渲染结构提交为 `4dbae2a`、`d23a346`、`bfb48ea`。
 
-社区活动记录已配置本地图片 `miniprogram/assets/温馨多代同堂的社区活动空间.png`，包含 `image.src`、`image.label` 和 `image.caption`；视频直链、播放器名称、简介和文字稿尚未提供，因此 `video` 对象不存在。详情页展示有替代说明和可见图注的图片，以及视频待提供文案。通过集成 CUA 已检查首页、服务列表、社区活动详情和报名页；设置/个人中心的交互状态、报名成功状态、视频播放及 VoiceOver / TalkBack 真机播报仍未验证。此前 `hermes computer-use doctor` 报告 `cua-driver: not installed`，但本会话使用的集成 CUA 可控制微信开发者工具。静态源码核对与 TypeScript 检查结果以 2026-10-02 计划的核验记录为准，不等同于上述运行时验收。
+社区活动记录已配置本地图片 `miniprogram/assets/温馨多代同堂的社区活动空间.png`，包含 `image.src`、`image.label` 和 `image.caption`；视频资料是可选项，目前没有 `video` 对象，详情页显示中文待提供说明。通过集成 CUA 已检查首页、服务列表、社区活动详情、报名必填错误和设置开关状态；报名成功状态、个人中心完整交互及 VoiceOver / TalkBack 真机播报仍未核验。微信开发者工具普通编译在修正不兼容语法后通过；这不等同于真机读屏验收。

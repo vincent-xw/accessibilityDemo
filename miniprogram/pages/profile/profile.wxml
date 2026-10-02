@@ -3,7 +3,7 @@
     <view class="profile-header surface-card">
       <view class="demo-avatar" aria-hidden="true">D</view>
       <view class="profile-identity">
-        <text class="text-title" aria-role="header" aria-level="1">Demo 用户</text>
+        <text class="text-title" aria-role="header" aria-level="1">示例用户</text>
         <text class="text-caption text-muted">本地示例资料，不代表真实个人信息</text>
       </view>
     </view>
@@ -22,7 +22,7 @@
       <view class="profile-service-grid" aria-role="list">
         <block wx:for="{{favoriteServices}}" wx:for-item="service" wx:key="id">
           <view class="profile-service-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{favoriteCount}}">
-            <button class="profile-service surface-card" aria-label="打开{{service.name}}的详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+            <button class="profile-service surface-card" aria-label="查看{{service.name}}详情" data-service-id="{{service.id}}" bindtap="onOpenService">
               <text class="profile-service-name text-body">{{service.name}}</text>
               <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
             </button>
@@ -43,7 +43,7 @@
       <view class="profile-service-grid" aria-role="list">
         <block wx:for="{{recentServices}}" wx:for-item="service" wx:key="id">
           <view class="profile-service-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{recentServiceCount}}">
-            <button class="profile-service surface-card" aria-label="打开{{service.name}}的详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+            <button class="profile-service surface-card" aria-label="查看{{service.name}}详情" data-service-id="{{service.id}}" bindtap="onOpenService">
               <text class="profile-service-name text-body">{{service.name}}</text>
               <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
             </button>

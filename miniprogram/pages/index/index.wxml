@@ -28,7 +28,7 @@
         bindinput="onSearchInput"
         bindconfirm="onSearchTap"
       />
-      <text id="home-search-help" class="text-caption text-muted">输入服务名称或关键词</text>
+      <text id="home-search-help" class="text-caption text-muted">输入名称或关键词后，按确认键或点击“搜索服务”查看结果。</text>
       <button class="button-primary search-button" bindtap="onSearchTap">搜索服务</button>
     </view>
 
@@ -39,7 +39,7 @@
     <view class="category-grid" aria-role="list">
       <block wx:for="{{serviceCategories}}" wx:for-item="category" wx:key="id">
         <view class="category-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{categoryCount}}">
-          <button class="category-card category-card--{{category.id}}" data-category-id="{{category.id}}" bindtap="onCategoryTap">
+          <button class="category-card category-card--{{category.id}}" aria-label="查看{{category.name}}类服务" data-category-id="{{category.id}}" bindtap="onCategoryTap">
             <view class="category-mark" aria-hidden="true"></view>
             <text class="category-name text-body">{{category.name}}</text>
             <text class="category-action text-caption">查看服务</text>
@@ -55,7 +55,7 @@
     <view class="featured-grid" aria-role="list">
       <block wx:for="{{featuredServices}}" wx:for-item="service" wx:key="id">
         <view class="featured-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{featuredServiceCount}}">
-          <button class="service-card surface-card" aria-label="打开{{service.name}}的详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+          <button class="service-card surface-card" aria-label="查看{{service.name}}详情" data-service-id="{{service.id}}" bindtap="onOpenService">
             <text class="service-category text-caption">{{service.categoryName}}</text>
             <text class="service-name text-body">{{service.name}}</text>
             <text class="service-summary text-caption text-muted">{{service.summary}}</text>
@@ -67,7 +67,7 @@
     <view class="notice-wrap">
       <button class="button-secondary notice-button" bindtap="onNoticeTap">
         <text class="notice-title text-body">服务信息说明</text>
-        <text class="notice-description text-caption">了解 Demo 内容与办理信息的使用范围</text>
+        <text class="notice-description text-caption">了解演示内容与办理信息的使用范围</text>
       </button>
     </view>
   </scroll-view>
