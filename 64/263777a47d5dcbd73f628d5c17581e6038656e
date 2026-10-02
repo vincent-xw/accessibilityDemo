@@ -1,0 +1,14 @@
+.gitignore
+  h_959ffaaf5065b8 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "64263777a47d5dcbd73f628d5c17581e6038656e",
+  "prompts": {},
+  "humans": {
+    "h_959ffaaf5065b8": {
+      "author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
