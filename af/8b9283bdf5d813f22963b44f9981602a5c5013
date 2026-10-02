@@ -1,0 +1,21 @@
+miniprogram/pages/appointment/appointment.wxml
+  s_536f5cc99fcfc2::t_dbdc952f09dd0b 14
+miniprogram/pages/index/index.wxml
+  s_536f5cc99fcfc2::t_dbdc952f09dd0b 53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "af8b9283bdf5d813f22963b44f9981602a5c5013",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
