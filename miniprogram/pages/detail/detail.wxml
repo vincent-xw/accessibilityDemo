@@ -31,6 +31,27 @@
       <text wx:else class="detail-media-caption text-body">社区活动图片待提供</text>
     </view>
 
+    <view wx:if="{{service.media}}" class="detail-video-section surface-card">
+      <!-- 仅在视频地址及无障碍文字作为完整对象提供后创建播放器。 -->
+      <block wx:if="{{service.media.video}}">
+        <video
+          class="detail-video-player"
+          src="{{service.media.video.src}}"
+          controls="true"
+          aria-label="{{service.media.video.label}}"
+          aria-describedby="service-video-summary service-video-transcript"
+        />
+        <text class="text-section-title detail-video-title" aria-role="header">活动视频</text>
+        <text id="service-video-summary" class="detail-video-copy text-body">{{service.media.video.summary}}</text>
+        <text class="detail-video-transcript-title text-body">视频文字稿</text>
+        <view id="service-video-transcript" class="detail-video-transcript text-body">{{service.media.video.transcript}}</view>
+      </block>
+      <block wx:else>
+        <text class="text-section-title" aria-role="header">视频素材待提供</text>
+        <text class="detail-video-copy text-body">提供可直接播放的视频链接、视频简介和文字稿后，这里会显示视频播放器及可阅读的文字内容。</text>
+      </block>
+    </view>
+
     <view class="detail-section surface-card">
       <text class="text-section-title" aria-role="header">办理条件</text>
       <view class="detail-list" aria-role="list">

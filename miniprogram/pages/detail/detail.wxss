@@ -71,6 +71,37 @@
   margin-top: 14rpx;
 }
 
+.detail-video-section {
+  margin-top: 24rpx;
+}
+
+.detail-video-player {
+  display: block;
+  width: 100%;
+  height: 400rpx;
+}
+
+.detail-video-title {
+  display: block;
+  margin-top: 20rpx;
+}
+
+.detail-video-copy {
+  display: block;
+  margin-top: 14rpx;
+}
+
+.detail-video-transcript-title {
+  display: block;
+  margin-top: 20rpx;
+  font-weight: 700;
+}
+
+.detail-video-transcript {
+  margin-top: 10rpx;
+  white-space: pre-line;
+}
+
 .detail-section {
   margin-top: 24rpx;
 }
