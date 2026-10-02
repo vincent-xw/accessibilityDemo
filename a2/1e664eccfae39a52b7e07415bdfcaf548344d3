@@ -1,0 +1,42 @@
+docs/superpowers/specs/2026-10-01-accessibility-mini-program-design.md
+  s_536f5cc99fcfc2::t_69a64e1b0c8589 84,110
+miniprogram/pages/services/services.wxml
+  s_536f5cc99fcfc2::t_aacdf89d51c01b 45
+  s_536f5cc99fcfc2::t_7b1d62d716ca3e 4,9,17,23-24,35,59
+miniprogram/pages/settings/settings.wxml
+  s_536f5cc99fcfc2::t_7b1d62d716ca3e 4,45
+miniprogram/pages/profile/profile.wxml
+  s_536f5cc99fcfc2::t_7b1d62d716ca3e 6,12,18,39
+  s_536f5cc99fcfc2::t_aacdf89d51c01b 25,46
+miniprogram/pages/index/index.wxml
+  s_536f5cc99fcfc2::t_aacdf89d51c01b 58
+  s_536f5cc99fcfc2::t_7b1d62d716ca3e 6,17,26,36,52
+docs/superpowers/plans/2026-10-02-accessibility-media-form-demo.md
+  s_536f5cc99fcfc2::t_c2148177c28ce9 54,58,70,204
+  s_536f5cc99fcfc2::t_69a64e1b0c8589 216,224,230,232
+miniprogram/pages/detail/detail.wxml
+  s_536f5cc99fcfc2::t_7b1d62d716ca3e 7,15,20,25,37,46-48,52,58,61,70,73
+miniprogram/pages/appointment/appointment.wxml
+  s_536f5cc99fcfc2::t_7b1d62d716ca3e 3,10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "a21e664eccfae39a52b7e07415bdfcaf548344d3",
+  "prompts": {},
+  "humans": {
+    "h_959ffaaf5065b8": {
+      "author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  },
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
