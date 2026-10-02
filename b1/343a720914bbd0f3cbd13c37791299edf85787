@@ -1,0 +1,19 @@
+miniprogram/pages/appointment/appointment.ts
+  s_536f5cc99fcfc2::t_7ec4ee5110f9bc 8-36,51,73-83,88-98,103-113,125,131,149-150,152,154,161
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "b1343a720914bbd0f3cbd13c37791299edf85787",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
