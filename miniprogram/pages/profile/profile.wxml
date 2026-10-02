@@ -3,26 +3,26 @@
     <view class="profile-header surface-card">
       <view class="demo-avatar" aria-hidden="true">D</view>
       <view class="profile-identity">
-        <text class="text-title" aria-role="header">Demo 用户</text>
+        <text class="text-title" aria-role="header" aria-level="1">Demo 用户</text>
         <text class="text-caption text-muted">本地示例资料，不代表真实个人信息</text>
       </view>
     </view>
 
     <view class="shortcut-panel surface-card">
-      <text class="text-section-title" aria-role="header">常用功能</text>
+      <text class="text-section-title" aria-role="header" aria-level="2">常用功能</text>
       <button class="button-secondary shortcut-button" bindtap="onOpenServices">浏览全部服务</button>
       <button class="button-secondary shortcut-button" bindtap="onOpenSettings">无障碍设置</button>
     </view>
 
     <view class="section-heading">
-      <text class="text-section-title" aria-role="header">我的收藏</text>
+      <text class="text-section-title" aria-role="header" aria-level="2">我的收藏</text>
       <text class="text-caption text-muted">收藏的服务会保存在本机</text>
     </view>
     <block wx:if="{{hasFavorites}}">
       <view class="profile-service-grid" aria-role="list">
         <block wx:for="{{favoriteServices}}" wx:for-item="service" wx:key="id">
           <view class="profile-service-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{favoriteCount}}">
-            <button class="profile-service surface-card" aria-label="打开详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+            <button class="profile-service surface-card" aria-label="打开{{service.name}}的详情" data-service-id="{{service.id}}" bindtap="onOpenService">
               <text class="profile-service-name text-body">{{service.name}}</text>
               <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
             </button>
@@ -36,14 +36,14 @@
     </view>
 
     <view class="section-heading">
-      <text class="text-section-title" aria-role="header">最近浏览</text>
+      <text class="text-section-title" aria-role="header" aria-level="2">最近浏览</text>
       <text class="text-caption text-muted">最近打开的服务显示在这里</text>
     </view>
     <block wx:if="{{hasRecentServices}}">
       <view class="profile-service-grid" aria-role="list">
         <block wx:for="{{recentServices}}" wx:for-item="service" wx:key="id">
           <view class="profile-service-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{recentServiceCount}}">
-            <button class="profile-service surface-card" aria-label="打开详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+            <button class="profile-service surface-card" aria-label="打开{{service.name}}的详情" data-service-id="{{service.id}}" bindtap="onOpenService">
               <text class="profile-service-name text-body">{{service.name}}</text>
               <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
             </button>

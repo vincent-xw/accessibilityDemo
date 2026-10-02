@@ -3,7 +3,7 @@
     <view class="home-hero surface-card">
       <view class="hero-copy">
         <text class="hero-eyebrow text-caption">社区服务 · 生活指南</text>
-        <text class="text-title" aria-role="header">社区生活服务</text>
+        <text class="text-title" aria-role="header" aria-level="1">社区生活服务</text>
         <text class="hero-description text-body">办事、生活、出行和文化服务，一处轻松查找。</text>
       </view>
       <view class="hero-art" aria-hidden="true">
@@ -14,7 +14,7 @@
     </view>
 
     <view class="search-panel surface-card">
-      <label class="search-label text-body" for="home-service-search">搜索服务</label>
+      <label id="home-service-search-label" class="search-label text-body" for="home-service-search">搜索服务</label>
       <input
         id="home-service-search"
         class="search-input"
@@ -23,6 +23,7 @@
         placeholder="输入服务名称或关键词"
         placeholder-class="search-placeholder"
         confirm-type="search"
+        aria-labelledby="home-service-search-label"
         aria-describedby="home-search-help"
         bindinput="onSearchInput"
         bindconfirm="onSearchTap"
@@ -32,7 +33,7 @@
     </view>
 
     <view class="section-heading">
-      <text class="text-section-title" aria-role="header">服务分类</text>
+      <text class="text-section-title" aria-role="header" aria-level="2">服务分类</text>
       <text class="text-caption text-muted">选择分类查看相关服务</text>
     </view>
     <view class="category-grid" aria-role="list">
@@ -48,13 +49,13 @@
     </view>
 
     <view class="section-heading featured-heading">
-      <text class="text-section-title" aria-role="header">推荐服务</text>
+      <text class="text-section-title" aria-role="header" aria-level="2">推荐服务</text>
       <button class="text-link text-body" bindtap="onAllServicesTap">查看全部</button>
     </view>
     <view class="featured-grid" aria-role="list">
       <block wx:for="{{featuredServices}}" wx:for-item="service" wx:key="id">
         <view class="featured-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{featuredServiceCount}}">
-          <button class="service-card surface-card" aria-label="打开详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+          <button class="service-card surface-card" aria-label="打开{{service.name}}的详情" data-service-id="{{service.id}}" bindtap="onOpenService">
             <text class="service-category text-caption">{{service.categoryName}}</text>
             <text class="service-name text-body">{{service.name}}</text>
             <text class="service-summary text-caption text-muted">{{service.summary}}</text>

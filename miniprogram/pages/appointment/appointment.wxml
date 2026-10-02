@@ -1,13 +1,13 @@
 <view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
   <view wx:if="{{!validService}}" class="status-page surface-card">
-    <text class="text-title" aria-role="header">报名链接无效</text>
+    <text class="text-title" aria-role="header" aria-level="1">报名链接无效</text>
     <text class="text-body text-muted status-description">该链接未指向社区活动报名演示，请返回服务详情重新进入。</text>
     <button class="button-primary" bindtap="onBackToServiceDetail">返回服务详情</button>
   </view>
 
   <scroll-view wx:else class="appointment-scroll" scroll-y type="list" aria-label="活动报名演示内容">
     <view class="page-intro">
-      <text class="text-title" aria-role="header">社区活动报名演示</text>
+      <text class="text-title" aria-role="header" aria-level="1">社区活动报名演示</text>
       <text class="text-body privacy-notice">仅演示校验，信息不会发送或保存</text>
     </view>
 

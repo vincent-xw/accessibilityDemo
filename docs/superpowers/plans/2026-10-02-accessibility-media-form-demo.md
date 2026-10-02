@@ -51,11 +51,11 @@
 
 - [x] **Step 1: 将可见字段文字关联到控件**
 
-在首页和服务页将搜索标题改成带 `for`/`id` 的 `<label>`，并为搜索输入补充 `aria-describedby` 指向持久可见的帮助文字。设置页开关继续使用现有 `<label for>`；删除与可见名称完全相同的冗余 `aria-label`，使用 `aria-describedby` 关联开关用途说明。
+在首页和服务页将搜索标题改成带 `for`/`id` 的 `<label>`，并为搜索输入增加 `aria-labelledby` 指向可见标签、用 `aria-describedby` 指向持久可见的帮助文字。设置页开关继续使用现有 `<label for>`；删除与可见名称完全相同的冗余 `aria-label`，使用 `aria-describedby` 关联开关用途说明。
 
 - [x] **Step 2: 为重复卡片补充分组及位置语义**
 
-把首页分类、首页推荐、服务结果、个人中心收藏/最近浏览各自标记为 `aria-role="list"`。循环按钮外增加 `aria-role="listitem"` 的轻量包装节点，并在包装节点设置 `aria-posinset="{{index + 1}}"` 与对应数组总数的 `aria-setsize`。将双列 Flex 宽度移到包装节点，按钮设为 `width: 100%`，保持原有 48% 双列、文本换行和原生按钮焦点。
+把首页分类、首页推荐、服务结果、个人中心收藏/最近浏览各自标记为 `aria-role="list"`。循环按钮外增加 `aria-role="listitem"` 的轻量包装节点，并在包装节点设置 `aria-posinset="{{index + 1}}"` 与对应数组总数的 `aria-setsize`；详情办理条件和步骤也提供条目位置及列表总数。将双列 Flex 宽度移到包装节点，按钮设为 `width: 100%`，保持原有 48% 双列、文本换行和原生按钮焦点。
 
 - [x] **Step 3: 只保留有区分价值的附加名称**
 
@@ -67,7 +67,7 @@
 
 - [x] **Step 5: 检查新增语义未覆盖原生角色**
 
-逐页搜索 `bindtap`、`bindchange`、`aria-`、`<label>` 和 `type="list"`；确认没有把原生 button/switch/radio/checkbox 的角色替换成另一个角色，装饰色块仍为 `aria-hidden`。
+逐页搜索 `bindtap`、`bindchange`、`aria-`、`<label>` 和 `type="list"`；确认页内主标题、区块标题、嵌套标题分别设置正确的 `aria-level`，没有把原生 button/switch/radio/checkbox 的角色替换成另一个角色，装饰色块仍为 `aria-hidden`。
 
 - [x] **Step 6: 提交既有页面语义修正**
 
@@ -201,7 +201,7 @@ export interface ServiceMedia {
 
 - [x] **Step 1: 逐页盘点交互和 ARIA 属性**
 
-检查首页、服务列表、详情、设置、个人中心和报名页全部 WXML。区分原生可见名称/状态与需要补充的 ARIA；检查标题、列表项位置、输入说明、错误关联、装饰隐藏、动态播报和 Tab 文本。
+检查首页、服务列表、详情、设置、个人中心和报名页全部 WXML。区分原生可见名称/状态与需要补充的 ARIA；检查标题层级、列表项位置、输入名称/说明关系、错误关联、装饰隐藏、动态播报和 Tab 文本。
 
 - [x] **Step 2: 静态验证源文件与配置**
 
@@ -213,7 +213,7 @@ export interface ServiceMedia {
 
 - [ ] **Step 3: 在工具可操作时检查运行中的无障碍树**
 
-本次通过集成 CUA 检查了首页、服务列表、社区活动详情和报名页。详情页运行时树显示带替代说明的图像、相邻图注和视频待提供状态；空表单提交后显示三条字段错误及汇总提示。设置与个人中心仅在初始树中看到，尚未检查其交互状态；报名成功状态、视频播放、VoiceOver / TalkBack 真机播报也未检查，因此本步骤保持未完成。此前 `hermes computer-use doctor` 报告 `cua-driver: not installed`，但这不影响本会话通过集成 CUA 查看开发者工具。
+本次通过集成 CUA 检查了首页、服务列表、社区活动详情和报名页。详情页运行时树显示带替代说明的图像、相邻图注和视频待提供状态；空表单提交后显示三条字段错误及汇总提示。设置与个人中心交互、报名成功状态、视频播放及 VoiceOver / TalkBack 真机播报仍未检查，因此本步骤保持未完成。后续 CUA 读取页面树可用，但点击报告 `Computer Use is not active` 和 `cgWindowNotFound`；此前 `hermes computer-use doctor` 报告 `cua-driver: not installed`，本次已请求用户重新提供诊断输出。
 
 - [x] **Step 4: 分项提交已完成内容**
 
@@ -221,12 +221,12 @@ export interface ServiceMedia {
 
 ## 完成边界
 
-表单及图片/视频条件渲染结构已提交。图片示意尚需用户提供本地素材，并一次配置 `src`、`label`、`caption`；视频播放尚需用户提供可直接播放的链接、播放器名称、简介和文字稿。ARIA 运行时播报依赖微信开发者工具/真机检查；源码标记本身不能证明所有系统的实际播报。
+表单及图片/视频条件渲染结构已提交。用户提供的本地活动图片现已配置 `src`、`label`、`caption`，展示框使用 4:3 源图比例；视频播放仍需可直接播放的链接、播放器名称、简介和文字稿。ARIA 运行时播报依赖微信开发者工具/真机检查；源码标记本身不能证明所有系统的实际播报。
 
 ## 实施与核验记录（2026-10-02）
 
 - Task 1 的既有页面语义代码见 `ded3854`、`f1742e8`；Task 4 的表单与校验修正见 `d6f4c63`、`b1343a7`；媒体结构见 `4dbae2a`、`d23a346`、`bfb48ea`。Task 2 的图像节点条件结构和 Task 3 的视频播放器条件结构已写入代码，但 Task 2 的素材生成、图片数据配置与图片交付、Task 3 的视频资料配置仍保持未完成。
 - `community-events.media.image` 已指向 `miniprogram/assets/温馨多代同堂的社区活动空间.png`，并提供图像替代说明和可见图注；`video` 对象仍不存在，详情页显示“视频素材待提供”，不渲染播放器。视频内容验收仍需等待素材。
-- 六个业务页面 WXML 已逐页盘点：首页搜索输入及按钮、分类/推荐卡片与通知入口；服务搜索、类别单选、结果卡片及清除入口；详情返回、收藏、联系、报名入口及条件媒体；设置双开关；个人中心常用入口与收藏/浏览卡片；报名页五类字段、提交与无效链接返回。可见标签、原生 checked、标题、重复列表位置、错误 ID 关系和有限的 live 区域均按源码核对；实际焦点名称与播报仍需运行时复核。
+- 六个业务页面 WXML 已逐页盘点：首页搜索输入及按钮、分类/推荐卡片与通知入口；服务搜索、类别单选、结果卡片及清除入口；详情返回、收藏、联系、报名入口及条件媒体；设置双开关；个人中心常用入口与收藏/浏览卡片；报名页五类字段、提交与无效链接返回。搜索和分类标签显式使用 `aria-labelledby`，页内标题声明 `aria-level`，详情条件/步骤条目提供列表位置，原生 checked、字段错误关系和有限的 live 区域均按源码核对；实际焦点名称与播报仍需运行时复核。
 - `rtk git diff --check` 通过；`miniprogram/app.json` 和全部七个页面 JSON（含未注册的模板 logs 页）均可解析。工作区没有 `node_modules/.bin/tsc`，因此未运行 `rtk pnpm exec tsc --noEmit`，也未安装依赖。TypeScript 编译与微信开发者工具编译均未在本次核验中完成。
-- 本次集成 CUA 运行时检查确认详情图像节点、图注和报名页必填错误播报可见；开发者工具控制台未见 JavaScript 错误，另有基础库灰度和 `reportRealtimeAction:fail not support` 警告。设置/个人中心状态、报名成功、视频播放及 VoiceOver / TalkBack 真机播报未核验，Task 5 Step 3 保持待完成。整体视频与完整运行时目标仍未完成。
+- 本次集成 CUA 运行时检查确认详情图像节点、图注和报名页必填错误播报可见；开发者工具控制台未见 JavaScript 错误，另有基础库灰度和 `reportRealtimeAction:fail not support` 警告。随后点击操作报告 `Computer Use is not active` / `cgWindowNotFound`，故设置/个人中心状态、报名成功、视频播放及 VoiceOver / TalkBack 真机播报未核验，Task 5 Step 3 保持待完成。整体视频与完整运行时目标仍未完成。
