@@ -1,0 +1,19 @@
+docs/superpowers/plans/2026-10-02-accessibility-media-form-demo.md
+  s_536f5cc99fcfc2::t_e0283bf3d3dee4 208-212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "89be70b7cd5c7d97bc63c8da9474d4f2de83b5c0",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
