@@ -35,6 +35,14 @@ page {
   min-width: 0;
 }
 
+.two-column-grid__item button {
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
 .text-title {
   display: block;
   font-size: 42rpx;
