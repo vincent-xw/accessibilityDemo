@@ -82,7 +82,7 @@
 - 用 `aria-describedby` 关联输入说明，用 `aria-required`、`aria-invalid`、`aria-errormessage` 表达表单必填和错误状态；错误文本须始终可见，不能只由颜色标记。
 - 用 `aria-live`、`aria-atomic` 在动态筛选结果、表单错误摘要和提交反馈处提供有节制的读屏更新；不将整页或每条静态说明设为 live region。
 - 通过原生 `checked` 等状态表达收藏、单选和开关状态；只有自绘控件才用相应的 ARIA 状态属性。
-- 以 `aria-role="header"` 和 `aria-level` 表达标题层级：页内主标题为 1、区块标题为 2、区块内标题为 3；列表项提供 `aria-posinset` 和 `aria-setsize`；装饰节点使用 `aria-hidden`。
+- 以 `aria-role="heading"` 和 `aria-level` 表达标题层级：页内主标题为 1、区块标题为 2、区块内标题为 3；列表项提供 `aria-posinset` 和 `aria-setsize`；装饰节点使用 `aria-hidden`。
 - 图标不单独承担操作名称；有意义的图片提供简洁替代说明和可见图注。视频不开启自动播放，并提供与重要音视频信息等效的文字内容。
 - 交互目标采用宽松间距和足够尺寸；正文与背景保持清晰对比，文字支持换行和放大。
 

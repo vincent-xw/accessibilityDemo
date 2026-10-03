@@ -63,7 +63,7 @@
 
 - [x] **Step 4: 为动态筛选结果增加克制的播报**
 
-给结果数量节点设置 `aria-live="polite"`、`aria-atomic="true"`；只播报“当前类别”和数量结果，不将卡片列表整体设为 live region。保留滚动区 `type="list"` 和现有标题 `aria-role="header"`。
+给结果数量节点设置 `aria-live="polite"`、`aria-atomic="true"`；只播报“当前类别”和数量结果，不将卡片列表整体设为 live region。保留滚动区 `type="list"` 和现有标题 `aria-role="heading"`。
 
 - [x] **Step 5: 检查新增语义未覆盖原生角色**
 
