@@ -15,6 +15,23 @@ page {
   line-height: 1.6;
 }
 
+/* 双列卡片按容器宽度分配，并在列宽中预留一半间距，避免窄屏横向溢出。 */
+.two-column-grid {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 16rpx;
+}
+
+.two-column-grid__item {
+  box-sizing: border-box;
+  flex: 0 0 calc(50% - 8rpx);
+  min-width: 0;
+}
+
 .text-title {
   display: block;
   font-size: 42rpx;

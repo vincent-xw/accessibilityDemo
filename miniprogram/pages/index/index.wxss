@@ -121,21 +121,7 @@
 }
 
 .category-grid {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: space-between;
   margin-top: 14rpx;
-}
-
-.category-item {
-  box-sizing: border-box;
-  flex: 0 0 48%;
-  width: 48%;
-  min-width: 0;
-  margin: 0 0 16rpx 0;
 }
 
 .category-card {
@@ -217,23 +203,6 @@
 
 .text-link::after {
   border: 0;
-}
-
-.featured-grid {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: space-between;
-}
-
-.featured-item {
-  box-sizing: border-box;
-  flex: 0 0 48%;
-  width: 48%;
-  min-width: 0;
-  margin: 0 0 16rpx 0;
 }
 
 .service-card {

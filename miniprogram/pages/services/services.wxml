@@ -22,9 +22,9 @@
 
       <text id="category-filter-label" class="filter-title text-body">筛选类别</text>
       <text id="category-filter-help" class="text-caption text-muted">选择一个类别，筛选下方服务结果。</text>
-      <radio-group class="category-filter" aria-labelledby="category-filter-label" aria-describedby="category-filter-help" bindchange="onCategoryChange">
+      <radio-group class="two-column-grid" aria-labelledby="category-filter-label" aria-describedby="category-filter-help" bindchange="onCategoryChange">
         <block wx:for="{{filterOptions}}" wx:key="id" wx:for-item="option">
-          <label class="category-option">
+          <label class="category-option two-column-grid__item">
             <radio value="{{option.id}}" checked="{{selectedCategory === option.id}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
             <text class="text-body">{{option.name}}</text>
           </label>
@@ -38,9 +38,9 @@
     </view>
 
     <block wx:if="{{hasResults}}">
-      <view class="service-results-grid" aria-role="list">
+      <view class="two-column-grid" aria-role="list">
         <block wx:for="{{visibleServices}}" wx:for-item="service" wx:key="id">
-          <view class="service-result-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{resultCount}}">
+          <view class="two-column-grid__item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{resultCount}}">
             <button
               class="service-result surface-card"
               aria-label="查看{{service.name}}详情"
