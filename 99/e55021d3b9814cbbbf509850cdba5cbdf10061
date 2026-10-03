@@ -1,0 +1,25 @@
+miniprogram/pages/profile/profile.wxss
+  s_536f5cc99fcfc2::t_a4fe3a14b51e1b 9,13-14
+miniprogram/app.wxss
+  s_536f5cc99fcfc2::t_a4fe3a14b51e1b 10,19,21,24,29
+miniprogram/pages/services/services.wxss
+  s_536f5cc99fcfc2::t_a4fe3a14b51e1b 9,13-14
+miniprogram/pages/index/index.wxss
+  s_536f5cc99fcfc2::t_a4fe3a14b51e1b 9,13-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "99e55021d3b9814cbbbf509850cdba5cbdf10061",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
