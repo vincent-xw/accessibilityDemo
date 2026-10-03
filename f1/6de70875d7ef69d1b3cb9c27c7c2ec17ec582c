@@ -1,0 +1,19 @@
+miniprogram/pages/detail/detail.wxml
+  s_536f5cc99fcfc2::t_fcd8268b2a0d9c 61,63,73,75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "f16de70875d7ef69d1b3cb9c27c7c2ec17ec582c",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
