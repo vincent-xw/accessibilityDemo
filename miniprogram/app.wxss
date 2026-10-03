@@ -7,6 +7,7 @@ page {
 
 .page-shell {
   min-height: 100vh;
+  min-width: 0;
   box-sizing: border-box;
   padding: 32rpx 32rpx 56rpx;
   background-color: #f3f7f5;
@@ -15,15 +16,17 @@ page {
   line-height: 1.6;
 }
 
-/* 双列卡片按容器宽度分配，并在列宽中预留一半间距，避免窄屏横向溢出。 */
+/* 双列卡片按页面内容宽度计算，使用 Flex 剩余空间形成列间距。 */
 .two-column-grid {
+  box-sizing: border-box;
   display: flex;
   width: 100%;
+  max-width: 100%;
   min-width: 0;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
-  gap: 16rpx;
+  justify-content: space-between;
 }
 
 .two-column-grid__item {
