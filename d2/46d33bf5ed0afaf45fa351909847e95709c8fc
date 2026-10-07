@@ -1,0 +1,19 @@
+docs/accessibility-walkthrough-prompts.md
+  s_536f5cc99fcfc2::t_9bc4c291fac665 12,22,32,42,52,62,72,82,92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "d246d33bf5ed0afaf45fa351909847e95709c8fc",
+  "prompts": {},
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
