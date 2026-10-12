@@ -1,0 +1,39 @@
+miniprogram/pages/webview-demo/webview-demo.wxml
+  s_536f5cc99fcfc2::t_d549cd6c6774e8 1
+miniprogram/pages/settings/settings.wxss
+  s_536f5cc99fcfc2::t_d549cd6c6774e8 80-103,112-122
+miniprogram/pages/webview-demo/webview-demo.ts
+  s_536f5cc99fcfc2::t_d549cd6c6774e8 1-2
+docs/accessibility-walkthrough-prompts.md
+  h_959ffaaf5065b8 29-51,75-124,148-178,201-206,208-218,220-229,232-236,258-314,386-413
+  h_959ffaaf5065b8 237
+miniprogram/app.json
+  s_536f5cc99fcfc2::t_d549cd6c6774e8 7
+miniprogram/pages/settings/settings.wxml
+  s_536f5cc99fcfc2::t_d549cd6c6774e8 48-53
+miniprogram/pages/webview-demo/webview-demo.json
+  s_536f5cc99fcfc2::t_d549cd6c6774e8 1-4
+project.config.json
+  h_959ffaaf5065b8 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "735b6a78315e919da6cf9c60e968a7dc90a88026",
+  "prompts": {},
+  "humans": {
+    "h_959ffaaf5065b8": {
+      "author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  },
+  "sessions": {
+    "s_536f5cc99fcfc2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f731-5401-7291-abbf-9ca5f01c58b6",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
