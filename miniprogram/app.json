@@ -4,6 +4,7 @@
     "pages/services/services",
     "pages/detail/detail",
     "pages/appointment/appointment",
+    "pages/webview-demo/webview-demo",
     "pages/settings/settings",
     "pages/profile/profile"
   ],

@@ -77,6 +77,30 @@
   margin-top: 12rpx;
 }
 
+.webview-demo-entry {
+  box-sizing: border-box;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  margin-top: 24rpx;
+  padding: 28rpx;
+  border: 2rpx solid #687c75;
+  color: #18332f;
+  text-decoration: none;
+}
+
+.webview-demo-copy {
+  display: block;
+  margin-top: 10rpx;
+}
+
+.webview-demo-action {
+  display: block;
+  margin-top: 18rpx;
+  color: #125c51;
+  font-weight: 700;
+}
+
 .page-shell--contrast .setting-divider {
   height: 3rpx;
   background-color: #000000;
@@ -84,4 +108,15 @@
 
 .page-shell--contrast .setting-description {
   color: #000000;
+}
+
+.page-shell--contrast .webview-demo-entry {
+  border-width: 4rpx;
+  border-color: #000000;
+  color: #000000;
+}
+
+.page-shell--contrast .webview-demo-action {
+  color: #000000;
+  text-decoration: underline;
 }

@@ -45,5 +45,11 @@
       <text class="text-section-title" aria-role="heading" aria-level="2">使用提示</text>
       <text class="usage-copy text-body">页面控件按从上到下的顺序浏览。大字模式放大文字；高对比模式使用黑白文字和边框帮助辨认内容。</text>
     </view>
+
+    <navigator class="webview-demo-entry surface-card" url="/pages/webview-demo/webview-demo">
+      <text class="text-section-title" aria-role="heading" aria-level="2">网页无障碍体验</text>
+      <text class="webview-demo-copy text-body">打开 Agent Kit 文档首页，检查小程序 WebView 中网页内容的无障碍读取。</text>
+      <text class="webview-demo-action text-body">打开网页体验</text>
+    </navigator>
   </scroll-view>
 </view>
