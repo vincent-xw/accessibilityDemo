@@ -1,0 +1,36 @@
+miniprogram/pages/services/services.wxml
+  s_1885bdecdd3766::t_f6feda6981e689 4,23-28,39,44,46,62
+miniprogram/pages/appointment/appointment.wxml
+  s_1885bdecdd3766::t_217f5dfaed4b79 3,10,14,18-27,34-43,52-61,77-84,103-110,113-117,120-124
+miniprogram/pages/detail/detail.wxml
+  s_1885bdecdd3766::t_d755ae44d81319 2,7,15,20,25,27,37,42-43,46,52,58-59,61-62,70-71,73
+miniprogram/pages/settings/settings.wxml
+  s_1885bdecdd3766::t_428d593b0792d4 4,13,30,43,48
+miniprogram/pages/appointment/appointment.wxss
+  s_1885bdecdd3766::t_4344ad8aad3284 111-120
+miniprogram/pages/index/index.wxml
+  s_1885bdecdd3766::t_361bb5d7cda8b0 6,9,34,37,39,50,53,55
+docs/aria-skill-application-report.md
+  s_1885bdecdd3766::t_c94d96ea053238 84,87-89,99
+  s_1885bdecdd3766::t_01216e0e89298d 1-83,85-86,90-98
+miniprogram/pages/profile/profile.wxml
+  s_1885bdecdd3766::t_ea0d92e09170ab 4,6,12,18,22,24,39,43,45
+aria-skill-coverage.json
+  s_1885bdecdd3766::t_a7b4f36484a0ca 1-309
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "a366390c03ca89756949af01c030dbdff6f31514",
+  "prompts": {},
+  "sessions": {
+    "s_1885bdecdd3766": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13444-7a50-7b20-9911-11f74740f2c5",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
