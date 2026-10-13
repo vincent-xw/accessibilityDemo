@@ -1,28 +1,28 @@
 <view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
-  <scroll-view class="profile-scroll" scroll-y type="list" aria-label="个人中心内容">
+  <scroll-view class="profile-scroll" scroll-y type="list">
     <view class="profile-header surface-card">
-      <view class="demo-avatar" aria-hidden="true">D</view>
+      <view class="demo-avatar">D</view>
       <view class="profile-identity">
-        <text class="text-title" aria-role="heading" aria-level="1">示例用户</text>
+        <text class="text-title">示例用户</text>
         <text class="text-caption text-muted">本地示例资料，不代表真实个人信息</text>
       </view>
     </view>
 
     <view class="shortcut-panel surface-card">
-      <text class="text-section-title" aria-role="heading" aria-level="2">常用功能</text>
+      <text class="text-section-title">常用功能</text>
       <button class="button-secondary shortcut-button" bindtap="onOpenServices">浏览全部服务</button>
       <button class="button-secondary shortcut-button" bindtap="onOpenSettings">无障碍设置</button>
     </view>
 
     <view class="section-heading">
-      <text class="text-section-title" aria-role="heading" aria-level="2">我的收藏</text>
+      <text class="text-section-title">我的收藏</text>
       <text class="text-caption text-muted">收藏的服务会保存在本机</text>
     </view>
     <block wx:if="{{hasFavorites}}">
-      <view class="two-column-grid" aria-role="list">
+      <view class="two-column-grid">
         <block wx:for="{{favoriteServices}}" wx:for-item="service" wx:key="id">
-          <view class="two-column-grid__item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{favoriteCount}}">
-            <button class="profile-service surface-card" aria-label="查看{{service.name}}详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+          <view class="two-column-grid__item">
+            <button class="profile-service surface-card" data-service-id="{{service.id}}" bindtap="onOpenService">
               <text class="profile-service-name text-body">{{service.name}}</text>
               <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
             </button>
@@ -36,14 +36,14 @@
     </view>
 
     <view class="section-heading">
-      <text class="text-section-title" aria-role="heading" aria-level="2">最近浏览</text>
+      <text class="text-section-title">最近浏览</text>
       <text class="text-caption text-muted">最近打开的服务显示在这里</text>
     </view>
     <block wx:if="{{hasRecentServices}}">
-      <view class="two-column-grid" aria-role="list">
+      <view class="two-column-grid">
         <block wx:for="{{recentServices}}" wx:for-item="service" wx:key="id">
-          <view class="two-column-grid__item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{recentServiceCount}}">
-            <button class="profile-service surface-card" aria-label="查看{{service.name}}详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+          <view class="two-column-grid__item">
+            <button class="profile-service surface-card" data-service-id="{{service.id}}" bindtap="onOpenService">
               <text class="profile-service-name text-body">{{service.name}}</text>
               <text class="profile-service-summary text-caption text-muted">{{service.summary}}</text>
             </button>

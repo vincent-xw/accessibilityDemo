@@ -1,7 +1,7 @@
 <view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
-  <scroll-view class="services-scroll" scroll-y type="list" aria-label="服务列表内容">
+  <scroll-view class="services-scroll" scroll-y type="list">
     <view class="page-intro">
-      <text class="text-title" aria-role="heading" aria-level="1">生活服务</text>
+      <text class="text-title">生活服务</text>
       <text class="text-body text-muted intro-description">搜索服务名称，或按类别筛选。</text>
     </view>
 
@@ -14,15 +14,13 @@
         value="{{keyword}}"
         placeholder="输入服务名称或关键词"
         placeholder-class="filter-placeholder"
-        aria-labelledby="services-search-label"
-        aria-describedby="services-search-help"
         bindinput="onKeywordInput"
       />
       <text id="services-search-help" class="text-caption text-muted">输入服务名称或关键词，结果会随着输入内容更新。</text>
 
       <text id="category-filter-label" class="filter-title text-body">筛选类别</text>
       <text id="category-filter-help" class="text-caption text-muted">选择一个类别，筛选下方服务结果。</text>
-      <radio-group class="two-column-grid" aria-labelledby="category-filter-label" aria-describedby="category-filter-help" bindchange="onCategoryChange">
+      <radio-group class="two-column-grid" bindchange="onCategoryChange">
         <block wx:for="{{filterOptions}}" wx:key="id" wx:for-item="option">
           <label class="category-option two-column-grid__item">
             <radio value="{{option.id}}" checked="{{selectedCategory === option.id}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
@@ -33,17 +31,16 @@
     </view>
 
     <view class="result-heading">
-      <text class="text-section-title" aria-role="heading" aria-level="2">服务结果</text>
-      <text class="text-body result-count" aria-live="polite" aria-atomic="true">当前类别：{{selectedCategoryLabel}}，共 {{resultCount}} 项服务</text>
+      <text class="text-section-title">服务结果</text>
+      <text class="text-body result-count">当前类别：{{selectedCategoryLabel}}，共 {{resultCount}} 项服务</text>
     </view>
 
     <block wx:if="{{hasResults}}">
-      <view class="two-column-grid" aria-role="list">
+      <view class="two-column-grid">
         <block wx:for="{{visibleServices}}" wx:for-item="service" wx:key="id">
-          <view class="two-column-grid__item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{resultCount}}">
+          <view class="two-column-grid__item">
             <button
               class="service-result surface-card"
-              aria-label="查看{{service.name}}详情"
               data-service-id="{{service.id}}"
               bindtap="onOpenService"
             >
@@ -57,7 +54,7 @@
     </block>
 
     <view wx:else class="empty-state surface-card">
-      <text class="text-section-title" aria-role="heading" aria-level="2">暂时没有符合条件的服务</text>
+      <text class="text-section-title">暂时没有符合条件的服务</text>
       <text class="text-body text-muted empty-description">可以清除关键词和类别筛选，再查看全部服务。</text>
       <button class="button-primary" bindtap="onClearFilters">清除筛选</button>
     </view>
