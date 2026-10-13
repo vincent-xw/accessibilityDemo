@@ -1,0 +1,29 @@
+miniprogram/pages/appointment/appointment.wxml
+  s_1885bdecdd3766::t_f97dbb0a12c06b 3,8,10,14,18,25,34,50,69,72,75
+miniprogram/pages/detail/detail.wxml
+  s_1885bdecdd3766::t_f9c8094e516f68 2,7,12,15,20,25-27,29,37,44,50,56-57,59-60,68-69,71-72,80
+miniprogram/pages/index/index.wxml
+  s_1885bdecdd3766::t_c8d15cbf7ed042 2,6,9,34,37,39-41,50,53,55-56
+miniprogram/pages/profile/profile.wxml
+  s_1885bdecdd3766::t_fa933cc1196655 2,4,6,12,18,22,24-25,39,43,45-46
+miniprogram/pages/services/services.wxml
+  s_1885bdecdd3766::t_15283b07ce17bc 2,4,23,34-35,39,41,57
+miniprogram/pages/settings/settings.wxml
+  s_1885bdecdd3766::t_a6eecbea11332e 2,4,43,48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "7277996d48639d0db2ef1fd39bf74327111760a9",
+  "prompts": {},
+  "sessions": {
+    "s_1885bdecdd3766": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13444-7a50-7b20-9911-11f74740f2c5",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
