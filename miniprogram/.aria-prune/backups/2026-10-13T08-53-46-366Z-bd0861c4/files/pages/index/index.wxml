@@ -1,0 +1,74 @@
+<view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
+  <scroll-view class="home-scroll" scroll-y type="list" aria-label="首页内容">
+    <view class="home-hero surface-card">
+      <view class="hero-copy">
+        <text class="hero-eyebrow text-caption">社区服务 · 生活指南</text>
+        <text class="text-title" aria-role="heading" aria-level="1">社区生活服务</text>
+        <text class="hero-description text-body">办事、生活、出行和文化服务，一处轻松查找。</text>
+      </view>
+      <view class="hero-art" aria-hidden="true">
+        <view class="hero-circle"></view>
+        <view class="hero-block"></view>
+        <view class="hero-dot"></view>
+      </view>
+    </view>
+
+    <view class="search-panel surface-card">
+      <label id="home-service-search-label" class="search-label text-body" for="home-service-search">搜索服务</label>
+      <input
+        id="home-service-search"
+        class="search-input"
+        type="text"
+        value="{{keyword}}"
+        placeholder="输入服务名称或关键词"
+        placeholder-class="search-placeholder"
+        confirm-type="search"
+        aria-labelledby="home-service-search-label"
+        aria-describedby="home-search-help"
+        bindinput="onSearchInput"
+        bindconfirm="onSearchTap"
+      />
+      <text id="home-search-help" class="text-caption text-muted">输入名称或关键词后，按确认键或点击“搜索服务”查看结果。</text>
+      <button class="button-primary search-button" bindtap="onSearchTap">搜索服务</button>
+    </view>
+
+    <view class="section-heading">
+      <text class="text-section-title" aria-role="heading" aria-level="2">服务分类</text>
+      <text class="text-caption text-muted">选择分类查看相关服务</text>
+    </view>
+    <view class="category-grid two-column-grid" aria-role="list">
+      <block wx:for="{{serviceCategories}}" wx:for-item="category" wx:key="id">
+        <view class="two-column-grid__item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{categoryCount}}">
+          <button class="category-card category-card--{{category.id}}" aria-label="查看{{category.name}}类服务" data-category-id="{{category.id}}" bindtap="onCategoryTap">
+            <view class="category-mark" aria-hidden="true"></view>
+            <text class="category-name text-body">{{category.name}}</text>
+            <text class="category-action text-caption">查看服务</text>
+          </button>
+        </view>
+      </block>
+    </view>
+
+    <view class="section-heading featured-heading">
+      <text class="text-section-title" aria-role="heading" aria-level="2">推荐服务</text>
+      <button class="text-link text-body" bindtap="onAllServicesTap">查看全部服务</button>
+    </view>
+    <view class="two-column-grid" aria-role="list">
+      <block wx:for="{{featuredServices}}" wx:for-item="service" wx:key="id">
+        <view class="two-column-grid__item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{featuredServiceCount}}">
+          <button class="service-card surface-card" aria-label="查看{{service.name}}详情" data-service-id="{{service.id}}" bindtap="onOpenService">
+            <text class="service-category text-caption">{{service.categoryName}}</text>
+            <text class="service-name text-body">{{service.name}}</text>
+            <text class="service-summary text-caption text-muted">{{service.summary}}</text>
+          </button>
+        </view>
+      </block>
+    </view>
+
+    <view class="notice-wrap">
+      <button class="button-secondary notice-button" bindtap="onNoticeTap">
+        <text class="notice-title text-body">服务信息说明</text>
+        <text class="notice-description text-caption">了解演示内容与办理信息的使用范围</text>
+      </button>
+    </view>
+  </scroll-view>
+</view>

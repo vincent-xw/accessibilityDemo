@@ -1,0 +1,30 @@
+{
+  "runId": "2026-10-13T08-44-35-327Z-ce35084c",
+  "createdAt": "2026-10-13T08:44:35.328Z",
+  "files": [
+    {
+      "file": "pages/detail/detail.wxml",
+      "backup": "files/pages/detail/detail.wxml"
+    },
+    {
+      "file": "pages/index/index.wxml",
+      "backup": "files/pages/index/index.wxml"
+    },
+    {
+      "file": "pages/settings/settings.wxml",
+      "backup": "files/pages/settings/settings.wxml"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "backup": "files/pages/appointment/appointment.wxml"
+    },
+    {
+      "file": "pages/profile/profile.wxml",
+      "backup": "files/pages/profile/profile.wxml"
+    },
+    {
+      "file": "pages/services/services.wxml",
+      "backup": "files/pages/services/services.wxml"
+    }
+  ]
+}

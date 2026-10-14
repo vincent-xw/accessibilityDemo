@@ -1,32 +1,32 @@
 <view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
-  <view wx:if="{{loading}}" class="status-page">
+  <view wx:if="{{loading}}" class="status-page" aria-live="polite" aria-atomic="true">
     <text class="text-body">正在读取服务信息</text>
   </view>
 
   <view wx:elif="{{notFound}}" class="status-page surface-card">
-    <text class="text-title">未找到该服务</text>
+    <text class="text-title" aria-role="heading" aria-level="1">未找到该服务</text>
     <text class="text-body text-muted status-description">服务链接可能已失效，请返回服务列表重新选择。</text>
     <button class="button-primary" bindtap="onBackToServices">返回服务列表</button>
   </view>
 
-  <scroll-view wx:else class="detail-scroll" scroll-y type="list">
+  <scroll-view wx:else class="detail-scroll" scroll-y type="list" aria-label="服务详情内容">
     <view class="detail-intro">
       <text class="detail-category text-caption">{{service.categoryName}}</text>
-      <text class="text-title">{{service.name}}</text>
+      <text class="text-title" aria-role="heading" aria-level="1">{{service.name}}</text>
       <text class="detail-summary text-body">{{service.summary}}</text>
     </view>
 
     <view class="detail-meta surface-card">
-      <text class="meta-title text-body">办理时长</text>
+      <text class="meta-title text-body" aria-role="heading" aria-level="2">办理时长</text>
       <text class="text-body text-muted">{{service.duration}}</text>
     </view>
 
     <view wx:if="{{service.media}}" class="detail-media surface-card">
-      <text class="text-section-title">活动图片</text>
-      <view wx:if="{{service.media.image}}" class="detail-media-frame">
-        <image class="detail-media-image" src="{{service.media.image.src}}" mode="aspectFill" />
+      <text class="text-section-title" aria-role="heading" aria-level="2">活动图片</text>
+      <view wx:if="{{service.media.image}}" class="detail-media-frame" aria-role="img" aria-label="{{service.media.image.label}}">
+        <image class="detail-media-image" src="{{service.media.image.src}}" mode="aspectFill" aria-hidden="true" />
       </view>
-      <view wx:else class="detail-media-frame detail-media-placeholder"></view>
+      <view wx:else class="detail-media-frame detail-media-placeholder" aria-hidden="true"></view>
       <text wx:if="{{service.media.image}}" class="detail-media-caption text-body">{{service.media.image.caption}}</text>
       <text wx:else class="detail-media-caption text-body">社区活动图片待提供</text>
     </view>
@@ -34,30 +34,32 @@
     <view wx:if="{{service.media}}" class="detail-video-section surface-card">
       <!-- 视频地址、名称、简介和文字稿都齐全时才创建播放器。 -->
       <block wx:if="{{service.media.video && service.media.video.src && service.media.video.label && service.media.video.summary && service.media.video.transcript}}">
-        <text class="text-section-title detail-video-title">活动视频</text>
+        <text class="text-section-title detail-video-title" aria-role="heading" aria-level="2">活动视频</text>
         <video
           class="detail-video-player"
           src="{{service.media.video.src}}"
           controls="true"
+          aria-label="{{service.media.video.label}}"
+          aria-describedby="service-video-summary service-video-transcript"
         />
         <text id="service-video-summary" class="detail-video-copy text-body">{{service.media.video.summary}}</text>
-        <text class="detail-video-transcript-title text-body">视频文字稿</text>
+        <text class="detail-video-transcript-title text-body" aria-role="heading" aria-level="3">视频文字稿</text>
         <view id="service-video-transcript" class="detail-video-transcript">
           <text class="detail-video-transcript-copy text-body">{{service.media.video.transcript}}</text>
         </view>
       </block>
       <block wx:else>
-        <text class="text-section-title">视频素材待提供</text>
+        <text class="text-section-title" aria-role="heading" aria-level="2">视频素材待提供</text>
         <text class="detail-video-copy text-body">提供可直接播放的视频链接、播放器名称、视频简介和文字稿后，这里会显示视频播放器及可阅读的文字内容。</text>
       </block>
     </view>
 
     <view class="detail-section surface-card">
-      <text class="text-section-title">办理条件</text>
-      <view class="detail-list">
+      <text class="text-section-title" aria-role="heading" aria-level="2">办理条件</text>
+      <view class="detail-list" aria-role="list">
         <block wx:for="{{service.requirements}}" wx:key="*this" wx:for-item="requirement">
-          <view class="detail-list-item">
-            <view class="list-marker"></view>
+          <view class="detail-list-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{service.requirements.length}}">
+            <view class="list-marker" aria-hidden="true"></view>
             <text class="text-body">{{requirement}}</text>
           </view>
         </block>
@@ -65,11 +67,11 @@
     </view>
 
     <view class="detail-section surface-card">
-      <text class="text-section-title">办理步骤</text>
-      <view class="detail-list">
+      <text class="text-section-title" aria-role="heading" aria-level="2">办理步骤</text>
+      <view class="detail-list" aria-role="list">
         <block wx:for="{{service.steps}}" wx:key="*this" wx:for-item="step">
-          <view class="detail-list-item">
-            <text class="step-number text-caption">{{index + 1}}</text>
+          <view class="detail-list-item" aria-role="listitem" aria-posinset="{{index + 1}}" aria-setsize="{{service.steps.length}}">
+            <text class="step-number text-caption" aria-hidden="true">{{index + 1}}</text>
             <text class="text-body">{{step}}</text>
           </view>
         </block>
@@ -77,7 +79,7 @@
     </view>
 
     <view class="favorite-panel surface-card">
-      <checkbox-group class="favorite-group" bindchange="onFavoriteChange">
+      <checkbox-group class="favorite-group" aria-label="管理该服务的收藏状态" bindchange="onFavoriteChange">
         <label class="favorite-label">
           <checkbox value="{{service.id}}" checked="{{isFavorite}}" color="{{highContrast ? '#000000' : '#125c51'}}" />
           <view class="favorite-copy">

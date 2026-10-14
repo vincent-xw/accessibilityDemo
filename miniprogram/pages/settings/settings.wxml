@@ -1,7 +1,7 @@
 <view class="page-shell {{largeText ? 'page-shell--large' : ''}} {{highContrast ? 'page-shell--contrast' : ''}}">
-  <scroll-view class="settings-scroll" scroll-y type="list">
+  <scroll-view class="settings-scroll" scroll-y type="list" aria-label="无障碍设置内容">
     <view class="page-intro">
-      <text class="text-title">无障碍设置</text>
+      <text class="text-title" aria-role="heading" aria-level="1">无障碍设置</text>
       <text class="text-body text-muted intro-description">按你的阅读习惯调整页面显示。</text>
     </view>
 
@@ -14,6 +14,7 @@
         </view>
         <switch
           id="large-text-switch"
+          aria-describedby="large-text-description"
           checked="{{largeText}}"
           data-key="largeText"
           color="{{highContrast ? '#000000' : '#125c51'}}"
@@ -31,6 +32,7 @@
         </view>
         <switch
           id="high-contrast-switch"
+          aria-describedby="high-contrast-description"
           checked="{{highContrast}}"
           data-key="highContrast"
           color="{{highContrast ? '#000000' : '#125c51'}}"
@@ -40,12 +42,12 @@
     </view>
 
     <view class="usage-panel surface-card">
-      <text class="text-section-title">使用提示</text>
+      <text class="text-section-title" aria-role="heading" aria-level="2">使用提示</text>
       <text class="usage-copy text-body">页面控件按从上到下的顺序浏览。大字模式放大文字；高对比模式使用黑白文字和边框帮助辨认内容。</text>
     </view>
 
     <navigator class="webview-demo-entry surface-card" url="/pages/webview-demo/webview-demo">
-      <text class="text-section-title">网页无障碍体验</text>
+      <text class="text-section-title" aria-role="heading" aria-level="2">网页无障碍体验</text>
       <text class="webview-demo-copy text-body">打开 Agent Kit 文档首页，检查小程序 WebView 中网页内容的无障碍读取。</text>
       <text class="webview-demo-action text-body">打开网页体验</text>
     </navigator>

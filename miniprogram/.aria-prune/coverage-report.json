@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-13T08:53:46.360Z",
+  "platforms": [
+    "wxml"
+  ],
+  "score": 76,
+  "applicableTargets": 37,
+  "namedTargets": 28,
+  "staticLabels": [
+    {
+      "file": "pages/index/index.wxml",
+      "tagName": "input",
+      "line": 18,
+      "column": 7,
+      "id": "home-service-search",
+      "evidence": "aria-labelledby",
+      "value": "home-service-search-label"
+    },
+    {
+      "file": "pages/index/index.wxml",
+      "tagName": "button",
+      "line": 32,
+      "column": 7,
+      "evidence": "text",
+      "value": "搜索服务"
+    },
+    {
+      "file": "pages/index/index.wxml",
+      "tagName": "button",
+      "line": 53,
+      "column": 7,
+      "evidence": "text",
+      "value": "查看全部服务"
+    },
+    {
+      "file": "pages/index/index.wxml",
+      "tagName": "button",
+      "line": 68,
+      "column": 7,
+      "evidence": "text",
+      "value": "服务信息说明 了解演示内容与办理信息的使用范围"
+    },
+    {
+      "file": "pages/services/services.wxml",
+      "tagName": "input",
+      "line": 10,
+      "column": 7,
+      "id": "services-search",
+      "evidence": "aria-labelledby",
+      "value": "services-search-label"
+    },
+    {
+      "file": "pages/services/services.wxml",
+      "tagName": "radio-group",
+      "line": 25,
+      "column": 7,
+      "evidence": "aria-labelledby",
+      "value": "category-filter-label"
+    },
+    {
+      "file": "pages/services/services.wxml",
+      "tagName": "button",
+      "line": 62,
+      "column": 7,
+      "evidence": "text",
+      "value": "清除筛选"
+    },
+    {
+      "file": "pages/detail/detail.wxml",
+      "tagName": "button",
+      "line": 9,
+      "column": 5,
+      "evidence": "text",
+      "value": "返回服务列表"
+    },
+    {
+      "file": "pages/detail/detail.wxml",
+      "tagName": "checkbox-group",
+      "line": 82,
+      "column": 7,
+      "evidence": "aria-label",
+      "value": "管理该服务的收藏状态"
+    },
+    {
+      "file": "pages/detail/detail.wxml",
+      "tagName": "button",
+      "line": 94,
+      "column": 7,
+      "evidence": "text",
+      "value": "查看联系说明"
+    },
+    {
+      "file": "pages/detail/detail.wxml",
+      "tagName": "button",
+      "line": 97,
+      "column": 7,
+      "evidence": "text",
+      "value": "填写活动报名演示"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "button",
+      "line": 5,
+      "column": 5,
+      "evidence": "text",
+      "value": "返回服务详情"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "form",
+      "line": 14,
+      "column": 5,
+      "evidence": "aria-label",
+      "value": "社区活动报名表单"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "input",
+      "line": 18,
+      "column": 9,
+      "id": "contact-name",
+      "evidence": "aria-labelledby",
+      "value": "contact-name-label"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "picker",
+      "line": 25,
+      "column": 9,
+      "id": "activity-date",
+      "evidence": "aria-labelledby",
+      "value": "activity-date-label"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "radio-group",
+      "line": 34,
+      "column": 9,
+      "id": "session-group",
+      "evidence": "aria-labelledby",
+      "value": "session-label"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "checkbox-group",
+      "line": 50,
+      "column": 9,
+      "id": "needs-group",
+      "evidence": "aria-labelledby",
+      "value": "needs-label"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "textarea",
+      "line": 69,
+      "column": 9,
+      "id": "notes",
+      "evidence": "aria-labelledby",
+      "value": "notes-label"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "button",
+      "line": 79,
+      "column": 7,
+      "evidence": "text",
+      "value": "完成报名演示"
+    },
+    {
+      "file": "pages/settings/settings.wxml",
+      "tagName": "navigator",
+      "line": 49,
+      "column": 5,
+      "evidence": "text",
+      "value": "网页无障碍体验 打开 Agent Kit 文档首页，检查小程序 WebView 中网页内容的无障碍读取。 打开网页体验"
+    },
+    {
+      "file": "pages/profile/profile.wxml",
+      "tagName": "button",
+      "line": 13,
+      "column": 7,
+      "evidence": "text",
+      "value": "浏览全部服务"
+    },
+    {
+      "file": "pages/profile/profile.wxml",
+      "tagName": "button",
+      "line": 14,
+      "column": 7,
+      "evidence": "text",
+      "value": "无障碍设置"
+    }
+  ],
+  "dynamicLabels": [
+    {
+      "file": "pages/index/index.wxml",
+      "tagName": "button",
+      "line": 42,
+      "column": 11,
+      "evidence": "aria-label",
+      "value": "查看{{category.name}}类服务"
+    },
+    {
+      "file": "pages/index/index.wxml",
+      "tagName": "button",
+      "line": 58,
+      "column": 11,
+      "evidence": "aria-label",
+      "value": "查看{{service.name}}详情"
+    },
+    {
+      "file": "pages/services/services.wxml",
+      "tagName": "button",
+      "line": 44,
+      "column": 13,
+      "evidence": "aria-label",
+      "value": "查看{{service.name}}详情"
+    },
+    {
+      "file": "pages/detail/detail.wxml",
+      "tagName": "video",
+      "line": 38,
+      "column": 9,
+      "evidence": "aria-label",
+      "value": "{{service.media.video.label}}"
+    },
+    {
+      "file": "pages/profile/profile.wxml",
+      "tagName": "button",
+      "line": 25,
+      "column": 13,
+      "evidence": "aria-label",
+      "value": "查看{{service.name}}详情"
+    },
+    {
+      "file": "pages/profile/profile.wxml",
+      "tagName": "button",
+      "line": 46,
+      "column": 13,
+      "evidence": "aria-label",
+      "value": "查看{{service.name}}详情"
+    }
+  ],
+  "missingNames": [
+    {
+      "file": "pages/services/services.wxml",
+      "tagName": "radio",
+      "line": 28,
+      "column": 13,
+      "reason": "未发现非空 aria 名称、控件文本或关联 label。"
+    },
+    {
+      "file": "pages/detail/detail.wxml",
+      "tagName": "checkbox",
+      "line": 84,
+      "column": 11,
+      "reason": "未发现非空 aria 名称、控件文本或关联 label。"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "radio",
+      "line": 36,
+      "column": 13,
+      "reason": "未发现非空 aria 名称、控件文本或关联 label。"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "radio",
+      "line": 40,
+      "column": 13,
+      "reason": "未发现非空 aria 名称、控件文本或关联 label。"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "checkbox",
+      "line": 52,
+      "column": 13,
+      "reason": "未发现非空 aria 名称、控件文本或关联 label。"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "checkbox",
+      "line": 56,
+      "column": 13,
+      "reason": "未发现非空 aria 名称、控件文本或关联 label。"
+    },
+    {
+      "file": "pages/appointment/appointment.wxml",
+      "tagName": "checkbox",
+      "line": 60,
+      "column": 13,
+      "reason": "未发现非空 aria 名称、控件文本或关联 label。"
+    },
+    {
+      "file": "pages/settings/settings.wxml",
+      "tagName": "switch",
+      "line": 15,
+      "column": 9,
+      "id": "large-text-switch",
+      "reason": "未发现非空 aria 名称、控件文本或关联 label。"
+    },
+    {
+      "file": "pages/settings/settings.wxml",
+      "tagName": "switch",
+      "line": 33,
+      "column": 9,
+      "id": "high-contrast-switch",
+      "reason": "未发现非空 aria 名称、控件文本或关联 label。"
+    }
+  ],
+  "unresolvedComponents": []
+}
