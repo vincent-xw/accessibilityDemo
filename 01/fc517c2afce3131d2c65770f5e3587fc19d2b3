@@ -1,0 +1,59 @@
+miniprogram/.aria-prune/backups/2026-10-13T08-44-35-327Z-ce35084c/files/pages/appointment/appointment.wxml
+  s_1885bdecdd3766::t_82bb63a2363ff5 1-82
+miniprogram/.aria-prune/backups/2026-10-13T08-44-35-327Z-ce35084c/files/pages/detail/detail.wxml
+  s_1885bdecdd3766::t_ad33e27d39dc70 1-100
+miniprogram/.aria-prune/backups/2026-10-13T08-44-35-327Z-ce35084c/files/pages/index/index.wxml
+  s_1885bdecdd3766::t_56f2e862e1581b 1-74
+miniprogram/.aria-prune/backups/2026-10-13T08-44-35-327Z-ce35084c/files/pages/profile/profile.wxml
+  s_1885bdecdd3766::t_1a3905ef2dabf4 1-59
+miniprogram/.aria-prune/backups/2026-10-13T08-44-35-327Z-ce35084c/files/pages/services/services.wxml
+  s_1885bdecdd3766::t_a67cecfd944be6 1-65
+miniprogram/.aria-prune/backups/2026-10-13T08-44-35-327Z-ce35084c/files/pages/settings/settings.wxml
+  s_1885bdecdd3766::t_c03426712d566b 1-55
+miniprogram/.aria-prune/backups/2026-10-13T08-44-35-327Z-ce35084c/manifest.json
+  s_1885bdecdd3766::t_886fbcfb97c329 1-30
+miniprogram/.aria-prune/backups/2026-10-13T08-53-46-366Z-bd0861c4/files/pages/appointment/appointment.wxml
+  s_1885bdecdd3766::t_f5cb416655bb45 1-82
+miniprogram/.aria-prune/backups/2026-10-13T08-53-46-366Z-bd0861c4/files/pages/detail/detail.wxml
+  s_1885bdecdd3766::t_fd33237bcaa075 1-100
+miniprogram/.aria-prune/backups/2026-10-13T08-53-46-366Z-bd0861c4/files/pages/index/index.wxml
+  s_1885bdecdd3766::t_b4caaf65343916 1-74
+miniprogram/.aria-prune/backups/2026-10-13T08-53-46-366Z-bd0861c4/files/pages/profile/profile.wxml
+  s_1885bdecdd3766::t_b8b6a1c786064b 1-59
+miniprogram/.aria-prune/backups/2026-10-13T08-53-46-366Z-bd0861c4/files/pages/services/services.wxml
+  s_1885bdecdd3766::t_f9a5a6f52611a3 1-65
+miniprogram/.aria-prune/backups/2026-10-13T08-53-46-366Z-bd0861c4/files/pages/settings/settings.wxml
+  s_1885bdecdd3766::t_284df626f96f0b 1-55
+miniprogram/.aria-prune/backups/2026-10-13T08-53-46-366Z-bd0861c4/manifest.json
+  s_1885bdecdd3766::t_7ad4adf7f56136 1-30
+miniprogram/.aria-prune/coverage-report.json
+  s_1885bdecdd3766::t_03acd8171fd04f 1-313
+miniprogram/pages/appointment/appointment.wxml
+  s_1885bdecdd3766::t_f49ab7177ff4d0 3,8,10,14,18,25,34,50,69,72,75
+miniprogram/pages/detail/detail.wxml
+  s_1885bdecdd3766::t_1bda18dd1405b6 2,7,12,15,20,25-27,29,37,42-43,46,52,58-59,61-62,70-71,73-74,82
+miniprogram/pages/index/index.wxml
+  s_1885bdecdd3766::t_f04b1f3d5840c8 2,6,9,26-27,36,39,41-43,52,55,57-58
+miniprogram/pages/profile/profile.wxml
+  s_1885bdecdd3766::t_f8a6e01174781a 2,4,6,12,18,22,24-25,39,43,45-46
+miniprogram/pages/services/services.wxml
+  s_1885bdecdd3766::t_d834cd8eee54e5 2,4,17-18,25,36-37,41,43,46,60
+miniprogram/pages/settings/settings.wxml
+  s_1885bdecdd3766::t_66ef48aa34ff45 2,4,17,35,45,50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "01fc517c2afce3131d2c65770f5e3587fc19d2b3",
+  "prompts": {},
+  "sessions": {
+    "s_1885bdecdd3766": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13444-7a50-7b20-9911-11f74740f2c5",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "vincent-xw <jiaxuewen2006@163.com>"
+    }
+  }
+}
